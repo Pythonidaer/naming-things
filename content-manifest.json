@@ -1,0 +1,142 @@
+[
+  {
+    "chapter": 1,
+    "title": "Purpose of this book",
+    "pdf_page_start": 10,
+    "pdf_page_end": 10,
+    "path": "/chapters/1-purpose-of-this-book/"
+  },
+  {
+    "chapter": 2,
+    "title": "Why is naming important?",
+    "pdf_page_start": 11,
+    "pdf_page_end": 16,
+    "path": "/chapters/2-why-is-naming-important/"
+  },
+  {
+    "chapter": 3,
+    "title": "Why is naming hard?",
+    "pdf_page_start": 17,
+    "pdf_page_end": 21,
+    "path": "/chapters/3-why-is-naming-hard/"
+  },
+  {
+    "chapter": 4,
+    "title": "Scope of this book",
+    "pdf_page_start": 22,
+    "pdf_page_end": 23,
+    "path": "/chapters/4-scope-of-this-book/"
+  },
+  {
+    "chapter": 5,
+    "title": "Overview",
+    "pdf_page_start": 25,
+    "pdf_page_end": 25,
+    "path": "/chapters/5-overview/"
+  },
+  {
+    "chapter": 6,
+    "title": "Understandability",
+    "pdf_page_start": 26,
+    "pdf_page_end": 39,
+    "path": "/chapters/6-understandability/"
+  },
+  {
+    "chapter": 7,
+    "title": "Conciseness",
+    "pdf_page_start": 40,
+    "pdf_page_end": 50,
+    "path": "/chapters/7-conciseness/"
+  },
+  {
+    "chapter": 8,
+    "title": "Consistency",
+    "pdf_page_start": 51,
+    "pdf_page_end": 56,
+    "path": "/chapters/8-consistency/"
+  },
+  {
+    "chapter": 9,
+    "title": "Distinguishability",
+    "pdf_page_start": 57,
+    "pdf_page_end": 63,
+    "path": "/chapters/9-distinguishability/"
+  },
+  {
+    "chapter": 10,
+    "title": "Overview",
+    "pdf_page_start": 65,
+    "pdf_page_end": 65,
+    "path": "/chapters/10-overview/"
+  },
+  {
+    "chapter": 11,
+    "title": "Tradeoffs",
+    "pdf_page_start": 66,
+    "pdf_page_end": 70,
+    "path": "/chapters/11-tradeoffs/"
+  },
+  {
+    "chapter": 12,
+    "title": "Identifier types",
+    "pdf_page_start": 71,
+    "pdf_page_end": 80,
+    "path": "/chapters/12-identifier-types/"
+  },
+  {
+    "chapter": 13,
+    "title": "Style guides",
+    "pdf_page_start": 81,
+    "pdf_page_end": 81,
+    "path": "/chapters/13-style-guides/"
+  },
+  {
+    "chapter": 14,
+    "title": "Controlled vocabularies",
+    "pdf_page_start": 82,
+    "pdf_page_end": 83,
+    "path": "/chapters/14-controlled-vocabularies/"
+  },
+  {
+    "chapter": 15,
+    "title": "Renaming",
+    "pdf_page_start": 84,
+    "pdf_page_end": 90,
+    "path": "/chapters/15-renaming/"
+  },
+  {
+    "chapter": 16,
+    "title": "Domain-specific names",
+    "pdf_page_start": 91,
+    "pdf_page_end": 92,
+    "path": "/chapters/16-domain-specific-names/"
+  },
+  {
+    "chapter": 17,
+    "title": "Developing naming skills",
+    "pdf_page_start": 93,
+    "pdf_page_end": 96,
+    "path": "/chapters/17-developing-naming-skills/"
+  },
+  {
+    "chapter": 18,
+    "title": "Common antonyms",
+    "pdf_page_start": 98,
+    "pdf_page_end": 101,
+    "path": "/chapters/18-common-antonyms/"
+  },
+  {
+    "chapter": 19,
+    "title": "Visually similar characters",
+    "pdf_page_start": 102,
+    "pdf_page_end": 102,
+    "path": "/chapters/19-visually-similar-characters/"
+  },
+  {
+    "chapter": 20,
+    "title": "Rejected principles",
+    "pdf_page_start": 103,
+    "pdf_page_end": 105,
+    "path": "/chapters/20-rejected-principles/"
+  }
+]
