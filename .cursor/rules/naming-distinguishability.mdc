@@ -1,0 +1,16 @@
+---
+description: Keep identifier names from being confused with each other in spelling, sound, or meaning. Use when a name could be read as a different concept.
+alwaysApply: false
+---
+
+# Distinguishability
+
+A name should have one meaning here, and it should not be easy to mix up with another name when read or spoken. [Overview](https://pythonidaer.github.io/naming-things/chapters/9-distinguishability/)
+
+- Avoid homographs and near-homographs: same or almost-same spelling, different meaning. In an invoicing domain, `check` can mean inspect or a bank check. Rename until the local meaning is the only one a reader reaches. [§9.2.1](https://pythonidaer.github.io/naming-things/chapters/9-distinguishability/#section-9-2-1)
+- Watch lookalike characters: `0`/`O`, `1`/`l`/`I`. The character pairs are in [Visually similar characters](https://pythonidaer.github.io/naming-things/chapters/19-visually-similar-characters/).
+- Avoid homophones and near-homophones (`whole` / `hole`). They collide in speech even when the spelling differs. [§9.2.2](https://pythonidaer.github.io/naming-things/chapters/9-distinguishability/#section-9-2-2)
+- Avoid polysemes: one word, several related meanings. `book` can be the work, the edition, or the copy. `email` can be the message or the address. Use the specific term (`email_address`, `literary_work`). [§9.2.3](https://pythonidaer.github.io/naming-things/chapters/9-distinguishability/#section-9-2-3)
+- Avoid a word whose technical meaning and everyday meaning both matter in this domain (`class` as a type and as a course). If the technical word is truly universal in code (`class` in most languages), do not also use it for the everyday concept. [§9.2.4](https://pythonidaer.github.io/naming-things/chapters/9-distinguishability/#section-9-2-4)
+
+A shorter familiar word loses when it can mean two things the codebase also needs. Distinguishability beats that brevity. [§11.4](https://pythonidaer.github.io/naming-things/chapters/11-tradeoffs/#section-11-4), [§11.5](https://pythonidaer.github.io/naming-things/chapters/11-tradeoffs/#section-11-5)

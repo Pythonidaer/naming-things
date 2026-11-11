@@ -1,0 +1,17 @@
+---
+description: Four principles for judging a software identifier name, and which principle wins a conflict. Use when naming, reviewing, or renaming classes, variables, methods, and other identifiers.
+alwaysApply: false
+---
+
+# Naming principles
+
+A name is effective when it is understandable, concise, consistent, and distinguishable. Source: [Overview](https://pythonidaer.github.io/naming-things/chapters/5-overview/).
+
+- **Understandability.** The name describes the concept so a reader can grasp it quickly and remember it. [Ch. 6](https://pythonidaer.github.io/naming-things/chapters/6-understandability/)
+- **Conciseness.** The name uses only the words needed to communicate that concept. [Ch. 7](https://pythonidaer.github.io/naming-things/chapters/7-conciseness/)
+- **Consistency.** One concept has one name. Similar concepts have similar names and the same format. [Ch. 8](https://pythonidaer.github.io/naming-things/chapters/8-consistency/)
+- **Distinguishability.** The name is not easily confused, in spelling, sound, or meaning, with another name. [Ch. 9](https://pythonidaer.github.io/naming-things/chapters/9-distinguishability/)
+
+When principles conflict, keep consistency first. A second name for one concept also damages the other three. Then prefer a distinguishable name over a shorter ambiguous one. [Tradeoffs](https://pythonidaer.github.io/naming-things/chapters/11-tradeoffs/)
+
+Length, searchability, pronounceability, and “accuracy” are not separate principles. They follow from these four. [Rejected principles](https://pythonidaer.github.io/naming-things/chapters/20-rejected-principles/)

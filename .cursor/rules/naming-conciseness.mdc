@@ -1,0 +1,16 @@
+---
+description: Keep an identifier only as specific as its readers need. Use when a name is vague, padded with type or implementation words, or longer than the concept requires.
+alwaysApply: false
+---
+
+# Conciseness
+
+A long name spends visual space, memory, and speech. Cut words that do not help the reader. Do not cut words that carry the meaning. [Overview](https://pythonidaer.github.io/naming-things/chapters/7-conciseness/)
+
+- Match the audience’s level of abstraction. `data` is too vague. `validated_total_sales_per_day_and_account_dataset` includes facts this reader does not need. Name the concept at the level they use it. [§7.2.1](https://pythonidaer.github.io/naming-things/chapters/7-conciseness/#section-7-2-1)
+- Prefer one rich word over a pile of generic ones. `Album` over `SongCollection`. `Subtask` over `ChildTask`. Replace a vague `get` with the verb that says what happens: `find`, `fetch`, `generate`, `calculate`, or `load`, and use each verb the same way everywhere. [§7.2.2](https://pythonidaer.github.io/naming-things/chapters/7-conciseness/#section-7-2-2)
+- Omit metadata the context already shows: type suffixes (`first_name_string`), collection kinds (`people_array`), and `Interface` on an interface. Add a type hint only when two nearby names would otherwise be confused, such as `location_text` beside a `Location` object. [§7.2.3](https://pythonidaer.github.io/naming-things/chapters/7-conciseness/#section-7-2-3)
+- Name what a method does for the caller, not how. `process_rows`, not `process_rows_in_parallel`. Put the mechanism in an argument when callers need to choose it. [§7.2.4](https://pythonidaer.github.io/naming-things/chapters/7-conciseness/#section-7-2-4)
+- Drop words the reader would assume. `delete`, not `delete_now`, unless a delayed delete also exists and the difference matters. [§7.2.5](https://pythonidaer.github.io/naming-things/chapters/7-conciseness/#section-7-2-5)
+
+For a phone-number method that strips whitespace, `format` says the intent. `strip` and `trim_whitespace` say the implementation. `process` says neither.

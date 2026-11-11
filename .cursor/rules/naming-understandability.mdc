@@ -1,0 +1,27 @@
+---
+description: Make an identifier name describe its concept in words the audience already knows. Use when choosing or reviewing a name for clarity.
+alwaysApply: false
+---
+
+# Understandability
+
+The name must describe the concept. `bicycle` names a bicycle. A vague, irrelevant, or invented word does not. [Describe the concept](https://pythonidaer.github.io/naming-things/chapters/6-understandability/#section-6-2-1)
+
+- Use dictionary words, problem-domain terms, and the standard term for a domain-agnostic concept (time, distance, a protocol). Problem-domain terms outlast the current implementation. [§6.2.2–6.2.4](https://pythonidaer.github.io/naming-things/chapters/6-understandability/#section-6-2-2)
+- Singular for one thing, plural for a collection. [§6.2.5](https://pythonidaer.github.io/naming-things/chapters/6-understandability/#section-6-2-5)
+- Match the part of speech. Classes are nouns (`User`). Methods are verbs (`validate`). Booleans are a linking verb plus complement (`is_valid`) or, where the language uses it, an adjective with `?`. [§6.2.6](https://pythonidaer.github.io/naming-things/chapters/6-understandability/#section-6-2-6)
+- Put the unit in a measurement: `timeout_ms`, not `timeout`. [§6.2.7](https://pythonidaer.github.io/naming-things/chapters/6-understandability/#section-6-2-7)
+- Single letters only where the language’s convention is pervasive (`i`, `j` for indices). Elsewhere use words. Avoid `l` and `o`, which look like `1` and `0`. [§6.2.8](https://pythonidaer.github.io/naming-things/chapters/6-understandability/#section-6-2-8)
+- Spell words out. Keep only abbreviations the audience already knows (`url`, `id`). If both the short and long forms exist, that is also an inconsistency. [§6.2.9](https://pythonidaer.github.io/naming-things/chapters/6-understandability/#section-6-2-9)
+- Skip jokes, homage, and names tied to a temporary incident. Skip symbolic names the reader would not already know (`+` is fine; an obscure operator name is not). [§6.2.10–6.2.12](https://pythonidaer.github.io/naming-things/chapters/6-understandability/#section-6-2-10)
+- Choose the word this audience already knows. An industry term is right when the readers know it and it carries meaning a plain synonym loses. [§6.2.13](https://pythonidaer.github.io/naming-things/chapters/6-understandability/#section-6-2-13)
+
+```text
+# Weak
+user.validation()
+ap = load_ap()
+
+# Stronger
+user.validate()
+accounts_payable = load_accounts_payable()
+```

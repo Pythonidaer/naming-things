@@ -1,6 +1,611 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Renaming — Naming Things</title><meta name="description" content="Read Renaming in Naming Things: The Hardest Problem in Software Engineering, second edition, by Tom Benner."><link rel="canonical" href="https://pythonidaer.github.io/naming-things/chapters/15-renaming/"><meta property="og:title" content="Renaming — Naming Things"><meta property="og:description" content="Read Renaming in Naming Things: The Hardest Problem in Software Engineering, second edition, by Tom Benner."><meta property="og:type" content="article"><meta property="og:url" content="https://pythonidaer.github.io/naming-things/chapters/15-renaming/"><meta property="og:image" content="https://pythonidaer.github.io/naming-things/share.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Naming Things. The Hardest Problem in Software Engineering. Tom Benner."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Renaming — Naming Things"><meta name="twitter:description" content="Read Renaming in Naming Things: The Hardest Problem in Software Engineering, second edition, by Tom Benner."><meta name="twitter:image" content="https://pythonidaer.github.io/naming-things/share.png"><meta name="twitter:image:alt" content="Naming Things by Tom Benner"><link rel="icon" href="/naming-things/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/naming-things/reset.css"><link rel="stylesheet" href="/naming-things/styles.css"><link rel="stylesheet" href="/naming-things/navigation.css"><script defer src="/naming-things/navigation.js"></script></head>
-<body><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="header-inner">
-<a class="wordmark" href="/naming-things/">Naming Things</a>
-<button id="nav-toggle" class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-navigation"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
-<nav id="site-navigation" class="nav-links" aria-label="Main navigation"><div class="desktop-links"><a href="/naming-things/">Contents</a><a href="/naming-things/roadmap/">Roadmap</a></div><div class="compact-links"><a class="contents-link" href="/naming-things/">Contents</a><div class="nav-group"><p>Introduction</p><ol><li><a href="/naming-things/chapters/1-purpose-of-this-book/"><span class="chapter-number">1</span><span>Purpose of this book</span></a></li><li><a href="/naming-things/chapters/2-why-is-naming-important/"><span class="chapter-number">2</span><span>Why is naming important?</span></a></li><li><a href="/naming-things/chapters/3-why-is-naming-hard/"><span class="chapter-number">3</span><span>Why is naming hard?</span></a></li><li><a href="/naming-things/chapters/4-scope-of-this-book/"><span class="chapter-number">4</span><span>Scope of this book</span></a></li></ol></div><div class="nav-group"><p>Principles</p><ol><li><a href="/naming-things/chapters/5-overview/"><span class="chapter-number">5</span><span>Overview</span></a></li><li><a href="/naming-things/chapters/6-understandability/"><span class="chapter-number">6</span><span>Understandability</span></a></li><li><a href="/naming-things/chapters/7-conciseness/"><span class="chapter-number">7</span><span>Conciseness</span></a></li><li><a href="/naming-things/chapters/8-consistency/"><span class="chapter-number">8</span><span>Consistency</span></a></li><li><a href="/naming-things/chapters/9-distinguishability/"><span class="chapter-number">9</span><span>Distinguishability</span></a></li></ol></div><div class="nav-group"><p>Application</p><ol><li><a href="/naming-things/chapters/10-overview/"><span class="chapter-number">10</span><span>Overview</span></a></li><li><a href="/naming-things/chapters/11-tradeoffs/"><span class="chapter-number">11</span><span>Tradeoffs</span></a></li><li><a href="/naming-things/chapters/12-identifier-types/"><span class="chapter-number">12</span><span>Identifier types</span></a></li><li><a href="/naming-things/chapters/13-style-guides/"><span class="chapter-number">13</span><span>Style guides</span></a></li><li><a href="/naming-things/chapters/14-controlled-vocabularies/"><span class="chapter-number">14</span><span>Controlled vocabularies</span></a></li><li><a href="/naming-things/chapters/15-renaming/" aria-current="page"><span class="chapter-number">15</span><span>Renaming</span></a></li><li><a href="/naming-things/chapters/16-domain-specific-names/"><span class="chapter-number">16</span><span>Domain-specific names</span></a></li><li><a href="/naming-things/chapters/17-developing-naming-skills/"><span class="chapter-number">17</span><span>Developing naming skills</span></a></li></ol></div><div class="nav-group"><p>Appendix</p><ol><li><a href="/naming-things/chapters/18-common-antonyms/"><span class="chapter-number">18</span><span>Common antonyms</span></a></li><li><a href="/naming-things/chapters/19-visually-similar-characters/"><span class="chapter-number">19</span><span>Visually similar characters</span></a></li><li><a href="/naming-things/chapters/20-rejected-principles/"><span class="chapter-number">20</span><span>Rejected principles</span></a></li></ol></div><div class="nav-extra"><a href="/naming-things/acknowledgements/">Acknowledgements</a><a href="/naming-things/references/">References</a><a href="/naming-things/roadmap/">Roadmap</a></div></div></nav></div></header>
-<div class="layout"><aside class="chapter-sidebar"><nav aria-label="Chapters"><a class="contents-link" href="/naming-things/">Contents</a><div class="nav-group"><p>Introduction</p><ol><li><a href="/naming-things/chapters/1-purpose-of-this-book/"><span class="chapter-number">1</span><span>Purpose of this book</span></a></li><li><a href="/naming-things/chapters/2-why-is-naming-important/"><span class="chapter-number">2</span><span>Why is naming important?</span></a></li><li><a href="/naming-things/chapters/3-why-is-naming-hard/"><span class="chapter-number">3</span><span>Why is naming hard?</span></a></li><li><a href="/naming-things/chapters/4-scope-of-this-book/"><span class="chapter-number">4</span><span>Scope of this book</span></a></li></ol></div><div class="nav-group"><p>Principles</p><ol><li><a href="/naming-things/chapters/5-overview/"><span class="chapter-number">5</span><span>Overview</span></a></li><li><a href="/naming-things/chapters/6-understandability/"><span class="chapter-number">6</span><span>Understandability</span></a></li><li><a href="/naming-things/chapters/7-conciseness/"><span class="chapter-number">7</span><span>Conciseness</span></a></li><li><a href="/naming-things/chapters/8-consistency/"><span class="chapter-number">8</span><span>Consistency</span></a></li><li><a href="/naming-things/chapters/9-distinguishability/"><span class="chapter-number">9</span><span>Distinguishability</span></a></li></ol></div><div class="nav-group"><p>Application</p><ol><li><a href="/naming-things/chapters/10-overview/"><span class="chapter-number">10</span><span>Overview</span></a></li><li><a href="/naming-things/chapters/11-tradeoffs/"><span class="chapter-number">11</span><span>Tradeoffs</span></a></li><li><a href="/naming-things/chapters/12-identifier-types/"><span class="chapter-number">12</span><span>Identifier types</span></a></li><li><a href="/naming-things/chapters/13-style-guides/"><span class="chapter-number">13</span><span>Style guides</span></a></li><li><a href="/naming-things/chapters/14-controlled-vocabularies/"><span class="chapter-number">14</span><span>Controlled vocabularies</span></a></li><li><a href="/naming-things/chapters/15-renaming/" aria-current="page"><span class="chapter-number">15</span><span>Renaming</span></a></li><li><a href="/naming-things/chapters/16-domain-specific-names/"><span class="chapter-number">16</span><span>Domain-specific names</span></a></li><li><a href="/naming-things/chapters/17-developing-naming-skills/"><span class="chapter-number">17</span><span>Developing naming skills</span></a></li></ol></div><div class="nav-group"><p>Appendix</p><ol><li><a href="/naming-things/chapters/18-common-antonyms/"><span class="chapter-number">18</span><span>Common antonyms</span></a></li><li><a href="/naming-things/chapters/19-visually-similar-characters/"><span class="chapter-number">19</span><span>Visually similar characters</span></a></li><li><a href="/naming-things/chapters/20-rejected-principles/"><span class="chapter-number">20</span><span>Rejected principles</span></a></li></ol></div><div class="nav-extra"><a href="/naming-things/acknowledgements/">Acknowledgements</a><a href="/naming-things/references/">References</a><a href="/naming-things/roadmap/">Roadmap</a></div></nav></aside><main id="main" tabindex="-1"><p class="eyebrow">Application / Chapter 15</p><h1>Renaming</h1><article class="prose"><p>We need to name concepts before we fully understand them or what their future meaning or audience will be. Given how many concepts engineers name, this can occur very frequently. Even with good naming practices, it’s inevitable that ill-fitting names will be created. Once a name enters a codebase, it spreads throughout the codebase and becomes part of the team’s vocabulary and the team’s written output, including documents, slides, and knowledge bases.</p><p>Similar to any other tech debt, bad names cause ongoing costs that can compound over time. The natural solution is to perform a rename, which has a one-time cost that may be less than the cumulative ongoing costs of a bad name. When considering whether to perform a rename, be careful to consider the rename’s scope, principal, interest, and process.</p><h2 id="section-15-1">15.1. Scope</h2><p>Renames can either be complete (renaming every instance of the old name) or partial (renaming instances of the old name only in specific components or systems). If you’re considering a partial rename, consider its costs. The benefits of consistency listed above may be lost. This loss is more pronounced when the sections of code are used by the same engineers and less pronounced when the sections of code are rarely used by the same engineers. In cases like this, consider a complete rename, so that the benefits of the new name are realized everywhere, and so that the costs of inconsistency aren’t incurred.</p><p>In large systems, another option is to duplicate the old code, then perform the renames in the new code, gradually switch from the old code to the new code, and then finally delete the old code. This can reduce the risk and cost of any bugs caused by the rename.</p><p>In very large systems, consider how much scope the consistency should have. For example, in an email marketing application, it may seem worthwhile to start using the name “email address” instead of “email” to refer to an email address since the name “email” could be confusing, as it has other meanings in this domain. If the scope of the “email address” name included the entire application, then an <code>email</code> property on a <code>User</code> class should be renamed to <code>email_address</code>. However, the <code>User.email</code> property may not be used often in the same scope as, say,</p><p><code>Recipient.email_address</code> and</p><p><code>Campaign.from_email_address</code>, so the benefits of renaming it to <code>User.email_address</code> may not be worth the effort. Be intentional about determining the scope of a name.</p><h2 id="section-15-2">15.2. Principal and interest</h2><p>As with any technical debt, a bad name has interest and principal.</p><p><strong>Interest</strong></p><p><strong>Definition</strong>: The ongoing costs of a bad name</p><p><strong>Costs</strong>: Low comprehension and recall of concepts, high-effort communication, and the corresponding downstream effects (e.g., slower execution, lower morale)</p><p><strong>Behavior over time</strong>: These costs can compound over time, especially if the scope and audience of the name increase.</p><p><strong>Principal</strong></p><p><strong>Definition</strong>: The cost to pay down the debt of a bad name by renaming to a good name</p><p><strong>Costs</strong>: Renaming the name in code and docs, and communicating the rename</p><p><strong>Behavior over time</strong>: This cost can increase over time if the scope and audience of the name increase, but it may increase at a slower rate than the interest’s rate of increase.</p><p>When deciding whether to pay off the debt of a bad name, compare the current principal to the expected future cumulative interest over the name’s lifetime. If the cost of performing a rename today is lower than the future ongoing costs of the bad name over its lifetime, a rename is worthwhile.</p><p><strong>The principal and interest of a bad name</strong></p><h3 id="section-15-2-1">15.2.1. Interest costs</h3><p>Bad names cause the following ongoing costs:</p><p><strong>Slow comprehension</strong>: Existing team members take more time and more mental capacity to learn new parts of the codebase and their concepts, and new team members take more time and more mental capacity to ramp up on these parts of the codebase and their concepts.</p><p><strong>Low recall</strong>: After a team member learns a new name/concept, it takes them more time and more mental capacity to remember that name/concept in the future.</p><p><strong>High-effort communication</strong>: Communication about the name/concept within the team and with external stakeholders takes more time and mental capacity since the names and concepts frequently need to be explained, disambiguated, or clarified.</p><p><strong>Bugs</strong>: Poor understanding of names and what they mean can easily lead to bugs.</p><p><strong>Other downstream effects</strong>: The additional time and mental capacity required by bad names can cause slower design and execution times. Confusion about concepts can lead to inadvertent defects or wasted effort due to miscommunication. All of these costs also result in opportunity costs: the team could be spending their time and mental capacity on higher-impact work. Finally, the net effect of these costs can lower morale, as the team is spending time on work that is unimportant and unfulfilling.</p><h3 id="section-15-2-2">15.2.2. Principal costs</h3><p>Performing a rename to pay down the debt has the following costs:</p><p><strong>Name </strong> <strong>selection</strong>: The new name needs to be determined.</p><p><strong>Stakeholder </strong> <strong>alignment</strong>: Before performing the rename, the stakeholders need to be aligned on the new name and its implementation plan.</p><p><strong>Rename</strong>: The bad name needs to be renamed to the good name in the codebase and optionally in the team’s written output (e.g., docs, slides, etc). The rename may interrupt other ongoing work on the same code paths, and depending on the nature of the rename, there’s a small chance of introducing defects.</p><p><strong>Bugs</strong>: If a rename is performed incorrectly, it can cause bugs.</p><p><strong>Switching costs</strong>: Team members may need to spend some mental capacity to adjust to the new name and remember to use it instead of the old name in their code, docs, and communication.</p><h2 id="section-15-3">15.3. Process</h2><p>The process for a rename is dependent on the rename’s scope and stakeholders, the nature of how the organization makes technical design decisions, and whether one concept or many concepts are being renamed. For non-trivial renames of a single concept, determine the following:</p><p><strong>Scope</strong>: Will the concept be renamed everywhere or only in specific components/systems?</p><p><strong>Stakeholders</strong>: Who has an interest in the rename? Who needs to review the rename, and who should be informed of the rename?</p><p><strong>New name</strong>: What is the proposed new name? This book’s Principles can be used as a guide to help determine the appropriate new name.</p><p><strong>Interest costs</strong>: What are the ongoing costs of retaining the existing name?</p><p><strong>Principal costs</strong>: What are the costs of performing the rename?</p><p>Depending on the scope and stakeholders, either discuss and get alignment on the rename (for trivial/small renames) or write a document that describes the above topics (for non-trivial/large renames) and get approval on it from the relevant stakeholders. The inclusion of a list of historical costs can make the rename’s value more compelling to stakeholders.</p><p>The exact process will depend on the nature of the organization. If you’re not confident about whether a rename should be performed or the exact process for it, consider how other successful technical design decisions are made in your organization and follow a similar path.</p></article><nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/naming-things/chapters/14-controlled-vocabularies/"><span>Previous chapter</span>Controlled vocabularies</a><a href="/naming-things/chapters/16-domain-specific-names/"><span>Next chapter</span>Domain-specific names</a></nav><footer class="site-footer"><p>Tom Benner · Second edition, 2023</p><p>Copyright © 2023 Tom Benner. All rights reserved.</p></footer></main><aside class="page-toc" aria-label="On this page"><p>On this page</p><a class="depth-2" href="#section-15-1">15.1. Scope</a><a class="depth-2" href="#section-15-2">15.2. Principal and interest</a><a class="depth-3" href="#section-15-2-1">15.2.1. Interest costs</a><a class="depth-3" href="#section-15-2-2">15.2.2. Principal costs</a><a class="depth-2" href="#section-15-3">15.3. Process</a></aside></div></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Renaming — Naming Things</title>
+    <meta
+      name="description"
+      content="Read Renaming in Naming Things: The Hardest Problem in Software Engineering, second edition, by Tom Benner."
+    />
+    <link
+      rel="canonical"
+      href="https://pythonidaer.github.io/naming-things/chapters/15-renaming/"
+    />
+    <meta property="og:title" content="Renaming — Naming Things" />
+    <meta
+      property="og:description"
+      content="Read Renaming in Naming Things: The Hardest Problem in Software Engineering, second edition, by Tom Benner."
+    />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:url"
+      content="https://pythonidaer.github.io/naming-things/chapters/15-renaming/"
+    />
+    <meta
+      property="og:image"
+      content="https://pythonidaer.github.io/naming-things/share.png"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Naming Things. The Hardest Problem in Software Engineering. Tom Benner."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Renaming — Naming Things" />
+    <meta
+      name="twitter:description"
+      content="Read Renaming in Naming Things: The Hardest Problem in Software Engineering, second edition, by Tom Benner."
+    />
+    <meta
+      name="twitter:image"
+      content="https://pythonidaer.github.io/naming-things/share.png"
+    />
+    <meta name="twitter:image:alt" content="Naming Things by Tom Benner" />
+    <link rel="icon" href="/naming-things/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/naming-things/reset.css" />
+    <link rel="stylesheet" href="/naming-things/styles.css" />
+    <link rel="stylesheet" href="/naming-things/navigation.css" />
+    <script defer src="/naming-things/navigation.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="wordmark" href="/naming-things/">Naming Things</a>
+        <button
+          id="nav-toggle"
+          class="nav-toggle"
+          type="button"
+          aria-label="Open navigation"
+          aria-expanded="false"
+          aria-controls="site-navigation"
+        >
+          <span aria-hidden="true"></span><span aria-hidden="true"></span
+          ><span aria-hidden="true"></span>
+        </button>
+        <nav
+          id="site-navigation"
+          class="nav-links"
+          aria-label="Main navigation"
+        >
+          <div class="desktop-links">
+            <a href="/naming-things/">Contents</a
+            ><a href="/naming-things/roadmap/">Roadmap</a>
+          </div>
+          <div class="compact-links">
+            <a class="contents-link" href="/naming-things/">Contents</a>
+            <div class="nav-group">
+              <p>Introduction</p>
+              <ol>
+                <li>
+                  <a href="/naming-things/chapters/1-purpose-of-this-book/"
+                    ><span class="chapter-number">1</span
+                    ><span>Purpose of this book</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/2-why-is-naming-important/"
+                    ><span class="chapter-number">2</span
+                    ><span>Why is naming important?</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/3-why-is-naming-hard/"
+                    ><span class="chapter-number">3</span
+                    ><span>Why is naming hard?</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/4-scope-of-this-book/"
+                    ><span class="chapter-number">4</span
+                    ><span>Scope of this book</span></a
+                  >
+                </li>
+              </ol>
+            </div>
+            <div class="nav-group">
+              <p>Principles</p>
+              <ol>
+                <li>
+                  <a href="/naming-things/chapters/5-overview/"
+                    ><span class="chapter-number">5</span
+                    ><span>Overview</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/6-understandability/"
+                    ><span class="chapter-number">6</span
+                    ><span>Understandability</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/7-conciseness/"
+                    ><span class="chapter-number">7</span
+                    ><span>Conciseness</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/8-consistency/"
+                    ><span class="chapter-number">8</span
+                    ><span>Consistency</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/9-distinguishability/"
+                    ><span class="chapter-number">9</span
+                    ><span>Distinguishability</span></a
+                  >
+                </li>
+              </ol>
+            </div>
+            <div class="nav-group">
+              <p>Application</p>
+              <ol>
+                <li>
+                  <a href="/naming-things/chapters/10-overview/"
+                    ><span class="chapter-number">10</span
+                    ><span>Overview</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/11-tradeoffs/"
+                    ><span class="chapter-number">11</span
+                    ><span>Tradeoffs</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/12-identifier-types/"
+                    ><span class="chapter-number">12</span
+                    ><span>Identifier types</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/13-style-guides/"
+                    ><span class="chapter-number">13</span
+                    ><span>Style guides</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/14-controlled-vocabularies/"
+                    ><span class="chapter-number">14</span
+                    ><span>Controlled vocabularies</span></a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/naming-things/chapters/15-renaming/"
+                    aria-current="page"
+                    ><span class="chapter-number">15</span
+                    ><span>Renaming</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/16-domain-specific-names/"
+                    ><span class="chapter-number">16</span
+                    ><span>Domain-specific names</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/17-developing-naming-skills/"
+                    ><span class="chapter-number">17</span
+                    ><span>Developing naming skills</span></a
+                  >
+                </li>
+              </ol>
+            </div>
+            <div class="nav-group">
+              <p>Appendix</p>
+              <ol>
+                <li>
+                  <a href="/naming-things/chapters/18-common-antonyms/"
+                    ><span class="chapter-number">18</span
+                    ><span>Common antonyms</span></a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/naming-things/chapters/19-visually-similar-characters/"
+                    ><span class="chapter-number">19</span
+                    ><span>Visually similar characters</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/20-rejected-principles/"
+                    ><span class="chapter-number">20</span
+                    ><span>Rejected principles</span></a
+                  >
+                </li>
+              </ol>
+            </div>
+            <div class="nav-extra">
+              <a href="/naming-things/acknowledgements/">Acknowledgements</a
+              ><a href="/naming-things/references/">References</a
+              ><a href="/naming-things/roadmap/">Roadmap</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <div class="layout">
+      <aside class="chapter-sidebar">
+        <nav aria-label="Chapters">
+          <a class="contents-link" href="/naming-things/">Contents</a>
+          <div class="nav-group">
+            <p>Introduction</p>
+            <ol>
+              <li>
+                <a href="/naming-things/chapters/1-purpose-of-this-book/"
+                  ><span class="chapter-number">1</span
+                  ><span>Purpose of this book</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/2-why-is-naming-important/"
+                  ><span class="chapter-number">2</span
+                  ><span>Why is naming important?</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/3-why-is-naming-hard/"
+                  ><span class="chapter-number">3</span
+                  ><span>Why is naming hard?</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/4-scope-of-this-book/"
+                  ><span class="chapter-number">4</span
+                  ><span>Scope of this book</span></a
+                >
+              </li>
+            </ol>
+          </div>
+          <div class="nav-group">
+            <p>Principles</p>
+            <ol>
+              <li>
+                <a href="/naming-things/chapters/5-overview/"
+                  ><span class="chapter-number">5</span><span>Overview</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/6-understandability/"
+                  ><span class="chapter-number">6</span
+                  ><span>Understandability</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/7-conciseness/"
+                  ><span class="chapter-number">7</span
+                  ><span>Conciseness</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/8-consistency/"
+                  ><span class="chapter-number">8</span
+                  ><span>Consistency</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/9-distinguishability/"
+                  ><span class="chapter-number">9</span
+                  ><span>Distinguishability</span></a
+                >
+              </li>
+            </ol>
+          </div>
+          <div class="nav-group">
+            <p>Application</p>
+            <ol>
+              <li>
+                <a href="/naming-things/chapters/10-overview/"
+                  ><span class="chapter-number">10</span
+                  ><span>Overview</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/11-tradeoffs/"
+                  ><span class="chapter-number">11</span
+                  ><span>Tradeoffs</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/12-identifier-types/"
+                  ><span class="chapter-number">12</span
+                  ><span>Identifier types</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/13-style-guides/"
+                  ><span class="chapter-number">13</span
+                  ><span>Style guides</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/14-controlled-vocabularies/"
+                  ><span class="chapter-number">14</span
+                  ><span>Controlled vocabularies</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="/naming-things/chapters/15-renaming/"
+                  aria-current="page"
+                  ><span class="chapter-number">15</span
+                  ><span>Renaming</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/16-domain-specific-names/"
+                  ><span class="chapter-number">16</span
+                  ><span>Domain-specific names</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/17-developing-naming-skills/"
+                  ><span class="chapter-number">17</span
+                  ><span>Developing naming skills</span></a
+                >
+              </li>
+            </ol>
+          </div>
+          <div class="nav-group">
+            <p>Appendix</p>
+            <ol>
+              <li>
+                <a href="/naming-things/chapters/18-common-antonyms/"
+                  ><span class="chapter-number">18</span
+                  ><span>Common antonyms</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="/naming-things/chapters/19-visually-similar-characters/"
+                  ><span class="chapter-number">19</span
+                  ><span>Visually similar characters</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/20-rejected-principles/"
+                  ><span class="chapter-number">20</span
+                  ><span>Rejected principles</span></a
+                >
+              </li>
+            </ol>
+          </div>
+          <div class="nav-extra">
+            <a href="/naming-things/acknowledgements/">Acknowledgements</a
+            ><a href="/naming-things/references/">References</a
+            ><a href="/naming-things/roadmap/">Roadmap</a>
+          </div>
+        </nav>
+      </aside>
+      <main id="main" tabindex="-1">
+        <p class="eyebrow">Application / Chapter 15</p>
+        <h1>Renaming</h1>
+        <article class="prose">
+          <p>
+            We need to name concepts before we fully understand them or what
+            their future meaning or audience will be. Given how many concepts
+            engineers name, this can occur very frequently. Even with good
+            naming practices, it’s inevitable that ill-fitting names will be
+            created. Once a name enters a codebase, it spreads throughout the
+            codebase and becomes part of the team’s vocabulary and the team’s
+            written output, including documents, slides, and knowledge bases.
+          </p>
+          <p>
+            Similar to any other tech debt, bad names cause ongoing costs that
+            can compound over time. The natural solution is to perform a rename,
+            which has a one-time cost that may be less than the cumulative
+            ongoing costs of a bad name. When considering whether to perform a
+            rename, be careful to consider the rename’s scope, principal,
+            interest, and process.
+          </p>
+          <h2 id="section-15-1">15.1. Scope</h2>
+          <p>
+            Renames can either be complete (renaming every instance of the old
+            name) or partial (renaming instances of the old name only in
+            specific components or systems). If you’re considering a partial
+            rename, consider its costs. The benefits of consistency listed above
+            may be lost. This loss is more pronounced when the sections of code
+            are used by the same engineers and less pronounced when the sections
+            of code are rarely used by the same engineers. In cases like this,
+            consider a complete rename, so that the benefits of the new name are
+            realized everywhere, and so that the costs of inconsistency aren’t
+            incurred.
+          </p>
+          <p>
+            In large systems, another option is to duplicate the old code, then
+            perform the renames in the new code, gradually switch from the old
+            code to the new code, and then finally delete the old code. This can
+            reduce the risk and cost of any bugs caused by the rename.
+          </p>
+          <p>
+            In very large systems, consider how much scope the consistency
+            should have. For example, in an email marketing application, it may
+            seem worthwhile to start using the name “email address” instead of
+            “email” to refer to an email address since the name “email” could be
+            confusing, as it has other meanings in this domain. If the scope of
+            the “email address” name included the entire application, then an
+            <code>email</code> property on a <code>User</code> class should be
+            renamed to <code>email_address</code>. However, the
+            <code>User.email</code> property may not be used often in the same
+            scope as, say,
+          </p>
+          <p><code>Recipient.email_address</code> and</p>
+          <p>
+            <code>Campaign.from_email_address</code>, so the benefits of
+            renaming it to <code>User.email_address</code> may not be worth the
+            effort. Be intentional about determining the scope of a name.
+          </p>
+          <h2 id="section-15-2">15.2. Principal and interest</h2>
+          <p>
+            As with any technical debt, a bad name has interest and principal.
+          </p>
+          <p><strong>Interest</strong></p>
+          <p><strong>Definition</strong>: The ongoing costs of a bad name</p>
+          <p>
+            <strong>Costs</strong>: Low comprehension and recall of concepts,
+            high-effort communication, and the corresponding downstream effects
+            (e.g., slower execution, lower morale)
+          </p>
+          <p>
+            <strong>Behavior over time</strong>: These costs can compound over
+            time, especially if the scope and audience of the name increase.
+          </p>
+          <p><strong>Principal</strong></p>
+          <p>
+            <strong>Definition</strong>: The cost to pay down the debt of a bad
+            name by renaming to a good name
+          </p>
+          <p>
+            <strong>Costs</strong>: Renaming the name in code and docs, and
+            communicating the rename
+          </p>
+          <p>
+            <strong>Behavior over time</strong>: This cost can increase over
+            time if the scope and audience of the name increase, but it may
+            increase at a slower rate than the interest’s rate of increase.
+          </p>
+          <p>
+            When deciding whether to pay off the debt of a bad name, compare the
+            current principal to the expected future cumulative interest over
+            the name’s lifetime. If the cost of performing a rename today is
+            lower than the future ongoing costs of the bad name over its
+            lifetime, a rename is worthwhile.
+          </p>
+          <p><strong>The principal and interest of a bad name</strong></p>
+          <h3 id="section-15-2-1">15.2.1. Interest costs</h3>
+          <p>Bad names cause the following ongoing costs:</p>
+          <p>
+            <strong>Slow comprehension</strong>: Existing team members take more
+            time and more mental capacity to learn new parts of the codebase and
+            their concepts, and new team members take more time and more mental
+            capacity to ramp up on these parts of the codebase and their
+            concepts.
+          </p>
+          <p>
+            <strong>Low recall</strong>: After a team member learns a new
+            name/concept, it takes them more time and more mental capacity to
+            remember that name/concept in the future.
+          </p>
+          <p>
+            <strong>High-effort communication</strong>: Communication about the
+            name/concept within the team and with external stakeholders takes
+            more time and mental capacity since the names and concepts
+            frequently need to be explained, disambiguated, or clarified.
+          </p>
+          <p>
+            <strong>Bugs</strong>: Poor understanding of names and what they
+            mean can easily lead to bugs.
+          </p>
+          <p>
+            <strong>Other downstream effects</strong>: The additional time and
+            mental capacity required by bad names can cause slower design and
+            execution times. Confusion about concepts can lead to inadvertent
+            defects or wasted effort due to miscommunication. All of these costs
+            also result in opportunity costs: the team could be spending their
+            time and mental capacity on higher-impact work. Finally, the net
+            effect of these costs can lower morale, as the team is spending time
+            on work that is unimportant and unfulfilling.
+          </p>
+          <h3 id="section-15-2-2">15.2.2. Principal costs</h3>
+          <p>
+            Performing a rename to pay down the debt has the following costs:
+          </p>
+          <p>
+            <strong>Name </strong> <strong>selection</strong>: The new name
+            needs to be determined.
+          </p>
+          <p>
+            <strong>Stakeholder </strong> <strong>alignment</strong>: Before
+            performing the rename, the stakeholders need to be aligned on the
+            new name and its implementation plan.
+          </p>
+          <p>
+            <strong>Rename</strong>: The bad name needs to be renamed to the
+            good name in the codebase and optionally in the team’s written
+            output (e.g., docs, slides, etc). The rename may interrupt other
+            ongoing work on the same code paths, and depending on the nature of
+            the rename, there’s a small chance of introducing defects.
+          </p>
+          <p>
+            <strong>Bugs</strong>: If a rename is performed incorrectly, it can
+            cause bugs.
+          </p>
+          <p>
+            <strong>Switching costs</strong>: Team members may need to spend
+            some mental capacity to adjust to the new name and remember to use
+            it instead of the old name in their code, docs, and communication.
+          </p>
+          <h2 id="section-15-3">15.3. Process</h2>
+          <p>
+            The process for a rename is dependent on the rename’s scope and
+            stakeholders, the nature of how the organization makes technical
+            design decisions, and whether one concept or many concepts are being
+            renamed. For non-trivial renames of a single concept, determine the
+            following:
+          </p>
+          <p>
+            <strong>Scope</strong>: Will the concept be renamed everywhere or
+            only in specific components/systems?
+          </p>
+          <p>
+            <strong>Stakeholders</strong>: Who has an interest in the rename?
+            Who needs to review the rename, and who should be informed of the
+            rename?
+          </p>
+          <p>
+            <strong>New name</strong>: What is the proposed new name? This
+            book’s Principles can be used as a guide to help determine the
+            appropriate new name.
+          </p>
+          <p>
+            <strong>Interest costs</strong>: What are the ongoing costs of
+            retaining the existing name?
+          </p>
+          <p>
+            <strong>Principal costs</strong>: What are the costs of performing
+            the rename?
+          </p>
+          <p>
+            Depending on the scope and stakeholders, either discuss and get
+            alignment on the rename (for trivial/small renames) or write a
+            document that describes the above topics (for non-trivial/large
+            renames) and get approval on it from the relevant stakeholders. The
+            inclusion of a list of historical costs can make the rename’s value
+            more compelling to stakeholders.
+          </p>
+          <p>
+            The exact process will depend on the nature of the organization. If
+            you’re not confident about whether a rename should be performed or
+            the exact process for it, consider how other successful technical
+            design decisions are made in your organization and follow a similar
+            path.
+          </p>
+        </article>
+        <nav class="chapter-pagination" aria-label="Chapter navigation">
+          <a href="/naming-things/chapters/14-controlled-vocabularies/"
+            ><span>Previous chapter</span>Controlled vocabularies</a
+          ><a href="/naming-things/chapters/16-domain-specific-names/"
+            ><span>Next chapter</span>Domain-specific names</a
+          >
+        </nav>
+        <footer class="site-footer">
+          <p>Tom Benner · Second edition, 2023</p>
+          <p>Copyright © 2023 Tom Benner. All rights reserved.</p>
+        </footer>
+      </main>
+      <aside class="page-toc" aria-label="On this page">
+        <p>On this page</p>
+        <a class="depth-2" href="#section-15-1">15.1. Scope</a
+        ><a class="depth-2" href="#section-15-2">15.2. Principal and interest</a
+        ><a class="depth-3" href="#section-15-2-1">15.2.1. Interest costs</a
+        ><a class="depth-3" href="#section-15-2-2">15.2.2. Principal costs</a
+        ><a class="depth-2" href="#section-15-3">15.3. Process</a>
+      </aside>
+    </div>
+  </body>
+</html>

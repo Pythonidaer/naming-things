@@ -1,0 +1,20 @@
+---
+description: Name classes, variables, booleans, collections, maps, methods, arguments, interfaces, and constants by their role. Use when choosing a name for a specific kind of identifier.
+alwaysApply: false
+---
+
+# Identifier types
+
+Follow the language’s convention, then these shapes. Apply one convention per kind of name. [Identifier types](https://pythonidaer.github.io/naming-things/chapters/12-identifier-types/)
+
+- **Classes.** Singular noun or noun phrase: `User`, `PaymentMethod`. A verb as a class name pretends the instance is an action. `UserValidator`, not `ValidateUser`. [§12.2](https://pythonidaer.github.io/naming-things/chapters/12-identifier-types/#section-12-2)
+- **Variables.** Noun or noun phrase. Unused required names follow the language’s blank-name convention. [§12.3](https://pythonidaer.github.io/naming-things/chapters/12-identifier-types/#section-12-3)
+- **Booleans.** `is_complete`, `has_admin_access`, or `complete?` where that style is normal. Do not use a noun that sounds like an object or enum (`error`, `status`). [§12.3.1](https://pythonidaer.github.io/naming-things/chapters/12-identifier-types/#section-12-3-1)
+- **Collections.** Plural, with no `_list` or `_array`. [§12.3.2](https://pythonidaer.github.io/naming-things/chapters/12-identifier-types/#section-12-3-2)
+- **Maps.** Name the key and the value in that order: `user_id_to_user`. `users_by_id` is weaker because the value comes first. [§12.3.3](https://pythonidaer.github.io/naming-things/chapters/12-identifier-types/#section-12-3-3)
+- **Methods.** Verb or verb phrase, or a boolean form. The name is what it does. If it also updates state, the name says so. `find_user` must not also save the user. [§12.4](https://pythonidaer.github.io/naming-things/chapters/12-identifier-types/#section-12-4)
+- **Arguments.** Same as variables, and specific enough that the caller knows what to pass. No single-letter parameters. [§12.5](https://pythonidaer.github.io/naming-things/chapters/12-identifier-types/#section-12-5)
+- **Interfaces.** Noun, noun phrase, or adjective. Pick one pattern, `-able` (`Writable`) or `Can` (`CanWrite`). No `Interface` suffix. [§12.6](https://pythonidaer.github.io/naming-things/chapters/12-identifier-types/#section-12-6)
+- **Constants.** The language’s form, often `MAX_FILE_SIZE_IN_BYTES`. One underscore between words. Include the unit. [§12.7](https://pythonidaer.github.io/naming-things/chapters/12-identifier-types/#section-12-7)
+
+Package and project names are out of scope here. [§12.8](https://pythonidaer.github.io/naming-things/chapters/12-identifier-types/#section-12-8)

@@ -1,6 +1,538 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>References — Naming Things</title><meta name="description" content="Read Naming Things by Tom Benner, organized into chapters on software naming principles and their application."><link rel="canonical" href="https://pythonidaer.github.io/naming-things/references/"><meta property="og:title" content="References — Naming Things"><meta property="og:description" content="Read Naming Things by Tom Benner, organized into chapters on software naming principles and their application."><meta property="og:type" content="website"><meta property="og:url" content="https://pythonidaer.github.io/naming-things/references/"><meta property="og:image" content="https://pythonidaer.github.io/naming-things/share.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Naming Things. The Hardest Problem in Software Engineering. Tom Benner."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="References — Naming Things"><meta name="twitter:description" content="Read Naming Things by Tom Benner, organized into chapters on software naming principles and their application."><meta name="twitter:image" content="https://pythonidaer.github.io/naming-things/share.png"><meta name="twitter:image:alt" content="Naming Things by Tom Benner"><link rel="icon" href="/naming-things/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/naming-things/reset.css"><link rel="stylesheet" href="/naming-things/styles.css"><link rel="stylesheet" href="/naming-things/navigation.css"><script defer src="/naming-things/navigation.js"></script></head>
-<body><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="header-inner">
-<a class="wordmark" href="/naming-things/">Naming Things</a>
-<button id="nav-toggle" class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-navigation"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
-<nav id="site-navigation" class="nav-links" aria-label="Main navigation"><div class="desktop-links"><a href="/naming-things/">Contents</a><a href="/naming-things/roadmap/">Roadmap</a></div><div class="compact-links"><a class="contents-link" href="/naming-things/">Contents</a><div class="nav-group"><p>Introduction</p><ol><li><a href="/naming-things/chapters/1-purpose-of-this-book/"><span class="chapter-number">1</span><span>Purpose of this book</span></a></li><li><a href="/naming-things/chapters/2-why-is-naming-important/"><span class="chapter-number">2</span><span>Why is naming important?</span></a></li><li><a href="/naming-things/chapters/3-why-is-naming-hard/"><span class="chapter-number">3</span><span>Why is naming hard?</span></a></li><li><a href="/naming-things/chapters/4-scope-of-this-book/"><span class="chapter-number">4</span><span>Scope of this book</span></a></li></ol></div><div class="nav-group"><p>Principles</p><ol><li><a href="/naming-things/chapters/5-overview/"><span class="chapter-number">5</span><span>Overview</span></a></li><li><a href="/naming-things/chapters/6-understandability/"><span class="chapter-number">6</span><span>Understandability</span></a></li><li><a href="/naming-things/chapters/7-conciseness/"><span class="chapter-number">7</span><span>Conciseness</span></a></li><li><a href="/naming-things/chapters/8-consistency/"><span class="chapter-number">8</span><span>Consistency</span></a></li><li><a href="/naming-things/chapters/9-distinguishability/"><span class="chapter-number">9</span><span>Distinguishability</span></a></li></ol></div><div class="nav-group"><p>Application</p><ol><li><a href="/naming-things/chapters/10-overview/"><span class="chapter-number">10</span><span>Overview</span></a></li><li><a href="/naming-things/chapters/11-tradeoffs/"><span class="chapter-number">11</span><span>Tradeoffs</span></a></li><li><a href="/naming-things/chapters/12-identifier-types/"><span class="chapter-number">12</span><span>Identifier types</span></a></li><li><a href="/naming-things/chapters/13-style-guides/"><span class="chapter-number">13</span><span>Style guides</span></a></li><li><a href="/naming-things/chapters/14-controlled-vocabularies/"><span class="chapter-number">14</span><span>Controlled vocabularies</span></a></li><li><a href="/naming-things/chapters/15-renaming/"><span class="chapter-number">15</span><span>Renaming</span></a></li><li><a href="/naming-things/chapters/16-domain-specific-names/"><span class="chapter-number">16</span><span>Domain-specific names</span></a></li><li><a href="/naming-things/chapters/17-developing-naming-skills/"><span class="chapter-number">17</span><span>Developing naming skills</span></a></li></ol></div><div class="nav-group"><p>Appendix</p><ol><li><a href="/naming-things/chapters/18-common-antonyms/"><span class="chapter-number">18</span><span>Common antonyms</span></a></li><li><a href="/naming-things/chapters/19-visually-similar-characters/"><span class="chapter-number">19</span><span>Visually similar characters</span></a></li><li><a href="/naming-things/chapters/20-rejected-principles/"><span class="chapter-number">20</span><span>Rejected principles</span></a></li></ol></div><div class="nav-extra"><a href="/naming-things/acknowledgements/">Acknowledgements</a><a href="/naming-things/references/" aria-current="page">References</a><a href="/naming-things/roadmap/">Roadmap</a></div></div></nav></div></header>
-<div class="layout"><aside class="chapter-sidebar"><nav aria-label="Chapters"><a class="contents-link" href="/naming-things/">Contents</a><div class="nav-group"><p>Introduction</p><ol><li><a href="/naming-things/chapters/1-purpose-of-this-book/"><span class="chapter-number">1</span><span>Purpose of this book</span></a></li><li><a href="/naming-things/chapters/2-why-is-naming-important/"><span class="chapter-number">2</span><span>Why is naming important?</span></a></li><li><a href="/naming-things/chapters/3-why-is-naming-hard/"><span class="chapter-number">3</span><span>Why is naming hard?</span></a></li><li><a href="/naming-things/chapters/4-scope-of-this-book/"><span class="chapter-number">4</span><span>Scope of this book</span></a></li></ol></div><div class="nav-group"><p>Principles</p><ol><li><a href="/naming-things/chapters/5-overview/"><span class="chapter-number">5</span><span>Overview</span></a></li><li><a href="/naming-things/chapters/6-understandability/"><span class="chapter-number">6</span><span>Understandability</span></a></li><li><a href="/naming-things/chapters/7-conciseness/"><span class="chapter-number">7</span><span>Conciseness</span></a></li><li><a href="/naming-things/chapters/8-consistency/"><span class="chapter-number">8</span><span>Consistency</span></a></li><li><a href="/naming-things/chapters/9-distinguishability/"><span class="chapter-number">9</span><span>Distinguishability</span></a></li></ol></div><div class="nav-group"><p>Application</p><ol><li><a href="/naming-things/chapters/10-overview/"><span class="chapter-number">10</span><span>Overview</span></a></li><li><a href="/naming-things/chapters/11-tradeoffs/"><span class="chapter-number">11</span><span>Tradeoffs</span></a></li><li><a href="/naming-things/chapters/12-identifier-types/"><span class="chapter-number">12</span><span>Identifier types</span></a></li><li><a href="/naming-things/chapters/13-style-guides/"><span class="chapter-number">13</span><span>Style guides</span></a></li><li><a href="/naming-things/chapters/14-controlled-vocabularies/"><span class="chapter-number">14</span><span>Controlled vocabularies</span></a></li><li><a href="/naming-things/chapters/15-renaming/"><span class="chapter-number">15</span><span>Renaming</span></a></li><li><a href="/naming-things/chapters/16-domain-specific-names/"><span class="chapter-number">16</span><span>Domain-specific names</span></a></li><li><a href="/naming-things/chapters/17-developing-naming-skills/"><span class="chapter-number">17</span><span>Developing naming skills</span></a></li></ol></div><div class="nav-group"><p>Appendix</p><ol><li><a href="/naming-things/chapters/18-common-antonyms/"><span class="chapter-number">18</span><span>Common antonyms</span></a></li><li><a href="/naming-things/chapters/19-visually-similar-characters/"><span class="chapter-number">19</span><span>Visually similar characters</span></a></li><li><a href="/naming-things/chapters/20-rejected-principles/"><span class="chapter-number">20</span><span>Rejected principles</span></a></li></ol></div><div class="nav-extra"><a href="/naming-things/acknowledgements/">Acknowledgements</a><a href="/naming-things/references/" aria-current="page">References</a><a href="/naming-things/roadmap/">Roadmap</a></div></nav></aside><main id="main" tabindex="-1"><h1>References</h1><article class="prose"><p><strong>References</strong></p><p>[1] Martin, R. C. (2008). Clean code: A handbook of agile software craftsmanship. In (1st ed.). USA: Prentice Hall PTR.</p><p>[2] McConnell, S. (2004). Code complete, second edition. In. USA: Microsoft Press.</p><p>[3] Hunt, A., &amp; Thomas, D. (2000). <em>The pragmatic</em> <em>programmer: From journeyman to master</em>. USA: Addison- Wesley Longman Publishing Co., Inc.</p><p>[4] Kernighan, B. W., &amp; Pike, R. (1999). <em>The practice of</em> <em>programming</em>. USA: Addison-Wesley Longman Publishing Co., Inc.</p><p>[5] Fowler, M. (1999). <em>Refactoring: Improving the design</em> <em>of existing code</em>. Boston, MA, USA: Addison-Wesley.</p><p>[6] Salviulo, F., &amp; Scanniello, G. (2014). Dealing with identifiers and comments in source code comprehension and maintenance: Results from an ethnographically- informed study with students and professionals. In</p><p><em>Proceedings of the 18th international conference on</em> <em>evaluation and assessment in software engineering</em>. New York, NY, USA: Association for Computing Machinery. https://doi.org/10.1145/2601248.2601251</p><p>[7] Feitelson, D. G., Mizrahi, A., Noy, N., Shabat, A. B., Eliyahu, O., &amp; Sheffer, R. (2021). How developers choose names. <em>CoRR</em>, <em>abs/2103.07487</em>. Retrieved from https://arxiv.org/abs/2103.07487</p><p>[8] Canfora, G., &amp; Cimitile, A. (2001). Software maintenance. <em>Handbook of Software Engineering and</em></p><p><em>Knowledge </em> <em>Engineering</em>, <em>1</em>. https://doi.org/10.1142/9789812389718_0005</p><p>[9] Pigoski, T., &amp; April, A. (2004). Software maintenance. In.</p><p>[10] Deissenboeck, F., &amp; Pizka, M. (2005). Concise and consistent naming. In <em>Software Quality Journal - SQJ</em> (Vol. 14, pp. 97–106). https://doi.org/10.1007/s11219-006-9219- 1</p><p>[11] Schankin, A., Berger, A., Holt, D. V., Hofmeister, J. C., Riedel, T., &amp; Beigl, M. (2018). Descriptive compound identifier names improve source code comprehension. In</p><p><em>Proceedings </em> <em>of </em> <em>the </em> <em>26th </em> <em>conference </em> <em>on </em> <em>program</em> <em>comprehension</em> (pp. 31–40). New York, NY, USA: Association for Computing Machinery. https://doi.org/10.1145/3196321.3196332</p><p>[12] Hofmeister, J. C., Siegmund, J., &amp; Holt, D. V. (2017). Shorter identifier names take longer to comprehend.</p><p><em>Empirical Software Engineering</em>, <em>24</em>, 417–443.</p><p>[13] Graziotin, D., &amp; Fagerholm, F. (2019). Happiness and the productivity of software engineers. In (pp. 109– 124). https://doi.org/10.1007/978-1-4842-4221-6_10</p><p>[14] Graziotin, D., Fagerholm, F., Wang, X., &amp; Abrahamsson, P. (2018). What happens when software developers are (un)happy. <em>Journal </em> <em>of </em> <em>Systems </em> <em>and</em></p><p><em>Software</em>, <em>140</em>, 32–47. https://doi.org/10.1016/j.jss.2018.02.041</p><p>[15] Butler, G., Grogono, P., Shinghal, R., &amp; Tjandra, I. A. (1995). Retrieving information from data flow diagrams.</p><p><em>Proceedings of 2nd Working Conference on Reverse</em></p><p><em>Engineering</em>, 22–29.</p><p>[16] Evans, E. (2003). <em>Domain-driven design: Tacking</em> <em>complexity in the heart of software</em>. USA: Addison-Wesley Longman Publishing Co., Inc.</p><p>[17] Beniamini, G., Gingichashvili, S., Orbach, A. K., &amp; Feitelson, D. G. (2017). Meaningful identifier names: The case of single-letter variables. In <em>Proceedings of the 25th</em> <em>international conference on program comprehension</em> (pp. 45–54). Buenos Aires, Argentina: IEEE Press. https://doi.org/10.1109/ICPC.2017.18</p><p>[18] Lawrie, D., Morrell, C., Feild, H., &amp; Binkley, D.</p><p>(2006). What’s in a name? A study of identifiers. In <em>IEEE</em></p><p><em>International Conference on Program Comprehension</em> (Vol. 2006, pp. 3–12). https://doi.org/10.1109/ICPC.2006.51</p><p>[19] Lawrie, D. J., Morrell, C., Feild, H., &amp; Binkley, D. W. (2007). Effective identifier names for comprehension and memory. <em>Innovations in Systems and Software Engineering</em>,</p><p><em>3</em>, 303–318.</p><p>[20] Binkley, D., Lawrie, D., Maex, S., &amp; Morrell, C. (2009). Identifier length and limited programmer memory.</p><p><em>Science of Computer Programming</em>, <em>74</em>(7), 430–445. https://doi.org/https://doi.org/10.1016/j.scico.2009.02.006</p><p>[21] Hayakawa, S. I., &amp; Hayakawa, A. R. (1990).</p><p><em>Language </em> <em>in </em> <em>thought </em> <em>and </em> <em>action</em>. Harcourt Brace Jovanovich. Retrieved from https://books.google.com/books?id=0H1p2sMdyXEC</p><p>[22] Brooks, F. P. (1995). <em>The mythical man-month</em></p><p><em>(anniversary </em> <em>ed.)</em>. USA: Addison-Wesley Longman Publishing Co., Inc.</p><p>[23] International Organization for</p><p>Standardization<em>Milking machine installations - Vocabulary</em> (Standard). (2007) (Vol. 2007). Geneva, CH.</p></article><footer class="site-footer"><p>Tom Benner · Second edition, 2023</p><p>Copyright © 2023 Tom Benner. All rights reserved.</p></footer></main></div></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>References — Naming Things</title>
+    <meta
+      name="description"
+      content="Read Naming Things by Tom Benner, organized into chapters on software naming principles and their application."
+    />
+    <link
+      rel="canonical"
+      href="https://pythonidaer.github.io/naming-things/references/"
+    />
+    <meta property="og:title" content="References — Naming Things" />
+    <meta
+      property="og:description"
+      content="Read Naming Things by Tom Benner, organized into chapters on software naming principles and their application."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://pythonidaer.github.io/naming-things/references/"
+    />
+    <meta
+      property="og:image"
+      content="https://pythonidaer.github.io/naming-things/share.png"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Naming Things. The Hardest Problem in Software Engineering. Tom Benner."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="References — Naming Things" />
+    <meta
+      name="twitter:description"
+      content="Read Naming Things by Tom Benner, organized into chapters on software naming principles and their application."
+    />
+    <meta
+      name="twitter:image"
+      content="https://pythonidaer.github.io/naming-things/share.png"
+    />
+    <meta name="twitter:image:alt" content="Naming Things by Tom Benner" />
+    <link rel="icon" href="/naming-things/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/naming-things/reset.css" />
+    <link rel="stylesheet" href="/naming-things/styles.css" />
+    <link rel="stylesheet" href="/naming-things/navigation.css" />
+    <script defer src="/naming-things/navigation.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="wordmark" href="/naming-things/">Naming Things</a>
+        <button
+          id="nav-toggle"
+          class="nav-toggle"
+          type="button"
+          aria-label="Open navigation"
+          aria-expanded="false"
+          aria-controls="site-navigation"
+        >
+          <span aria-hidden="true"></span><span aria-hidden="true"></span
+          ><span aria-hidden="true"></span>
+        </button>
+        <nav
+          id="site-navigation"
+          class="nav-links"
+          aria-label="Main navigation"
+        >
+          <div class="desktop-links">
+            <a href="/naming-things/">Contents</a
+            ><a href="/naming-things/roadmap/">Roadmap</a>
+          </div>
+          <div class="compact-links">
+            <a class="contents-link" href="/naming-things/">Contents</a>
+            <div class="nav-group">
+              <p>Introduction</p>
+              <ol>
+                <li>
+                  <a href="/naming-things/chapters/1-purpose-of-this-book/"
+                    ><span class="chapter-number">1</span
+                    ><span>Purpose of this book</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/2-why-is-naming-important/"
+                    ><span class="chapter-number">2</span
+                    ><span>Why is naming important?</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/3-why-is-naming-hard/"
+                    ><span class="chapter-number">3</span
+                    ><span>Why is naming hard?</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/4-scope-of-this-book/"
+                    ><span class="chapter-number">4</span
+                    ><span>Scope of this book</span></a
+                  >
+                </li>
+              </ol>
+            </div>
+            <div class="nav-group">
+              <p>Principles</p>
+              <ol>
+                <li>
+                  <a href="/naming-things/chapters/5-overview/"
+                    ><span class="chapter-number">5</span
+                    ><span>Overview</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/6-understandability/"
+                    ><span class="chapter-number">6</span
+                    ><span>Understandability</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/7-conciseness/"
+                    ><span class="chapter-number">7</span
+                    ><span>Conciseness</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/8-consistency/"
+                    ><span class="chapter-number">8</span
+                    ><span>Consistency</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/9-distinguishability/"
+                    ><span class="chapter-number">9</span
+                    ><span>Distinguishability</span></a
+                  >
+                </li>
+              </ol>
+            </div>
+            <div class="nav-group">
+              <p>Application</p>
+              <ol>
+                <li>
+                  <a href="/naming-things/chapters/10-overview/"
+                    ><span class="chapter-number">10</span
+                    ><span>Overview</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/11-tradeoffs/"
+                    ><span class="chapter-number">11</span
+                    ><span>Tradeoffs</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/12-identifier-types/"
+                    ><span class="chapter-number">12</span
+                    ><span>Identifier types</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/13-style-guides/"
+                    ><span class="chapter-number">13</span
+                    ><span>Style guides</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/14-controlled-vocabularies/"
+                    ><span class="chapter-number">14</span
+                    ><span>Controlled vocabularies</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/15-renaming/"
+                    ><span class="chapter-number">15</span
+                    ><span>Renaming</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/16-domain-specific-names/"
+                    ><span class="chapter-number">16</span
+                    ><span>Domain-specific names</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/17-developing-naming-skills/"
+                    ><span class="chapter-number">17</span
+                    ><span>Developing naming skills</span></a
+                  >
+                </li>
+              </ol>
+            </div>
+            <div class="nav-group">
+              <p>Appendix</p>
+              <ol>
+                <li>
+                  <a href="/naming-things/chapters/18-common-antonyms/"
+                    ><span class="chapter-number">18</span
+                    ><span>Common antonyms</span></a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/naming-things/chapters/19-visually-similar-characters/"
+                    ><span class="chapter-number">19</span
+                    ><span>Visually similar characters</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/20-rejected-principles/"
+                    ><span class="chapter-number">20</span
+                    ><span>Rejected principles</span></a
+                  >
+                </li>
+              </ol>
+            </div>
+            <div class="nav-extra">
+              <a href="/naming-things/acknowledgements/">Acknowledgements</a
+              ><a href="/naming-things/references/" aria-current="page"
+                >References</a
+              ><a href="/naming-things/roadmap/">Roadmap</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <div class="layout">
+      <aside class="chapter-sidebar">
+        <nav aria-label="Chapters">
+          <a class="contents-link" href="/naming-things/">Contents</a>
+          <div class="nav-group">
+            <p>Introduction</p>
+            <ol>
+              <li>
+                <a href="/naming-things/chapters/1-purpose-of-this-book/"
+                  ><span class="chapter-number">1</span
+                  ><span>Purpose of this book</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/2-why-is-naming-important/"
+                  ><span class="chapter-number">2</span
+                  ><span>Why is naming important?</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/3-why-is-naming-hard/"
+                  ><span class="chapter-number">3</span
+                  ><span>Why is naming hard?</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/4-scope-of-this-book/"
+                  ><span class="chapter-number">4</span
+                  ><span>Scope of this book</span></a
+                >
+              </li>
+            </ol>
+          </div>
+          <div class="nav-group">
+            <p>Principles</p>
+            <ol>
+              <li>
+                <a href="/naming-things/chapters/5-overview/"
+                  ><span class="chapter-number">5</span><span>Overview</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/6-understandability/"
+                  ><span class="chapter-number">6</span
+                  ><span>Understandability</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/7-conciseness/"
+                  ><span class="chapter-number">7</span
+                  ><span>Conciseness</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/8-consistency/"
+                  ><span class="chapter-number">8</span
+                  ><span>Consistency</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/9-distinguishability/"
+                  ><span class="chapter-number">9</span
+                  ><span>Distinguishability</span></a
+                >
+              </li>
+            </ol>
+          </div>
+          <div class="nav-group">
+            <p>Application</p>
+            <ol>
+              <li>
+                <a href="/naming-things/chapters/10-overview/"
+                  ><span class="chapter-number">10</span
+                  ><span>Overview</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/11-tradeoffs/"
+                  ><span class="chapter-number">11</span
+                  ><span>Tradeoffs</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/12-identifier-types/"
+                  ><span class="chapter-number">12</span
+                  ><span>Identifier types</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/13-style-guides/"
+                  ><span class="chapter-number">13</span
+                  ><span>Style guides</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/14-controlled-vocabularies/"
+                  ><span class="chapter-number">14</span
+                  ><span>Controlled vocabularies</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/15-renaming/"
+                  ><span class="chapter-number">15</span
+                  ><span>Renaming</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/16-domain-specific-names/"
+                  ><span class="chapter-number">16</span
+                  ><span>Domain-specific names</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/17-developing-naming-skills/"
+                  ><span class="chapter-number">17</span
+                  ><span>Developing naming skills</span></a
+                >
+              </li>
+            </ol>
+          </div>
+          <div class="nav-group">
+            <p>Appendix</p>
+            <ol>
+              <li>
+                <a href="/naming-things/chapters/18-common-antonyms/"
+                  ><span class="chapter-number">18</span
+                  ><span>Common antonyms</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="/naming-things/chapters/19-visually-similar-characters/"
+                  ><span class="chapter-number">19</span
+                  ><span>Visually similar characters</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/20-rejected-principles/"
+                  ><span class="chapter-number">20</span
+                  ><span>Rejected principles</span></a
+                >
+              </li>
+            </ol>
+          </div>
+          <div class="nav-extra">
+            <a href="/naming-things/acknowledgements/">Acknowledgements</a
+            ><a href="/naming-things/references/" aria-current="page"
+              >References</a
+            ><a href="/naming-things/roadmap/">Roadmap</a>
+          </div>
+        </nav>
+      </aside>
+      <main id="main" tabindex="-1">
+        <h1>References</h1>
+        <article class="prose">
+          <p><strong>References</strong></p>
+          <p>
+            [1] Martin, R. C. (2008). Clean code: A handbook of agile software
+            craftsmanship. In (1st ed.). USA: Prentice Hall PTR.
+          </p>
+          <p>
+            [2] McConnell, S. (2004). Code complete, second edition. In. USA:
+            Microsoft Press.
+          </p>
+          <p>
+            [3] Hunt, A., &amp; Thomas, D. (2000). <em>The pragmatic</em>
+            <em>programmer: From journeyman to master</em>. USA: Addison- Wesley
+            Longman Publishing Co., Inc.
+          </p>
+          <p>
+            [4] Kernighan, B. W., &amp; Pike, R. (1999).
+            <em>The practice of</em> <em>programming</em>. USA: Addison-Wesley
+            Longman Publishing Co., Inc.
+          </p>
+          <p>
+            [5] Fowler, M. (1999). <em>Refactoring: Improving the design</em>
+            <em>of existing code</em>. Boston, MA, USA: Addison-Wesley.
+          </p>
+          <p>
+            [6] Salviulo, F., &amp; Scanniello, G. (2014). Dealing with
+            identifiers and comments in source code comprehension and
+            maintenance: Results from an ethnographically- informed study with
+            students and professionals. In
+          </p>
+          <p>
+            <em>Proceedings of the 18th international conference on</em>
+            <em>evaluation and assessment in software engineering</em>. New
+            York, NY, USA: Association for Computing Machinery.
+            https://doi.org/10.1145/2601248.2601251
+          </p>
+          <p>
+            [7] Feitelson, D. G., Mizrahi, A., Noy, N., Shabat, A. B., Eliyahu,
+            O., &amp; Sheffer, R. (2021). How developers choose names.
+            <em>CoRR</em>, <em>abs/2103.07487</em>. Retrieved from
+            https://arxiv.org/abs/2103.07487
+          </p>
+          <p>
+            [8] Canfora, G., &amp; Cimitile, A. (2001). Software maintenance.
+            <em>Handbook of Software Engineering and</em>
+          </p>
+          <p>
+            <em>Knowledge </em> <em>Engineering</em>, <em>1</em>.
+            https://doi.org/10.1142/9789812389718_0005
+          </p>
+          <p>
+            [9] Pigoski, T., &amp; April, A. (2004). Software maintenance. In.
+          </p>
+          <p>
+            [10] Deissenboeck, F., &amp; Pizka, M. (2005). Concise and
+            consistent naming. In <em>Software Quality Journal - SQJ</em> (Vol.
+            14, pp. 97–106). https://doi.org/10.1007/s11219-006-9219- 1
+          </p>
+          <p>
+            [11] Schankin, A., Berger, A., Holt, D. V., Hofmeister, J. C.,
+            Riedel, T., &amp; Beigl, M. (2018). Descriptive compound identifier
+            names improve source code comprehension. In
+          </p>
+          <p>
+            <em>Proceedings </em> <em>of </em> <em>the </em> <em>26th </em>
+            <em>conference </em> <em>on </em> <em>program</em>
+            <em>comprehension</em> (pp. 31–40). New York, NY, USA: Association
+            for Computing Machinery. https://doi.org/10.1145/3196321.3196332
+          </p>
+          <p>
+            [12] Hofmeister, J. C., Siegmund, J., &amp; Holt, D. V. (2017).
+            Shorter identifier names take longer to comprehend.
+          </p>
+          <p><em>Empirical Software Engineering</em>, <em>24</em>, 417–443.</p>
+          <p>
+            [13] Graziotin, D., &amp; Fagerholm, F. (2019). Happiness and the
+            productivity of software engineers. In (pp. 109– 124).
+            https://doi.org/10.1007/978-1-4842-4221-6_10
+          </p>
+          <p>
+            [14] Graziotin, D., Fagerholm, F., Wang, X., &amp; Abrahamsson, P.
+            (2018). What happens when software developers are (un)happy.
+            <em>Journal </em> <em>of </em> <em>Systems </em> <em>and</em>
+          </p>
+          <p>
+            <em>Software</em>, <em>140</em>, 32–47.
+            https://doi.org/10.1016/j.jss.2018.02.041
+          </p>
+          <p>
+            [15] Butler, G., Grogono, P., Shinghal, R., &amp; Tjandra, I. A.
+            (1995). Retrieving information from data flow diagrams.
+          </p>
+          <p><em>Proceedings of 2nd Working Conference on Reverse</em></p>
+          <p><em>Engineering</em>, 22–29.</p>
+          <p>
+            [16] Evans, E. (2003). <em>Domain-driven design: Tacking</em>
+            <em>complexity in the heart of software</em>. USA: Addison-Wesley
+            Longman Publishing Co., Inc.
+          </p>
+          <p>
+            [17] Beniamini, G., Gingichashvili, S., Orbach, A. K., &amp;
+            Feitelson, D. G. (2017). Meaningful identifier names: The case of
+            single-letter variables. In <em>Proceedings of the 25th</em>
+            <em>international conference on program comprehension</em> (pp.
+            45–54). Buenos Aires, Argentina: IEEE Press.
+            https://doi.org/10.1109/ICPC.2017.18
+          </p>
+          <p>[18] Lawrie, D., Morrell, C., Feild, H., &amp; Binkley, D.</p>
+          <p>
+            (2006). What’s in a name? A study of identifiers. In <em>IEEE</em>
+          </p>
+          <p>
+            <em>International Conference on Program Comprehension</em> (Vol.
+            2006, pp. 3–12). https://doi.org/10.1109/ICPC.2006.51
+          </p>
+          <p>
+            [19] Lawrie, D. J., Morrell, C., Feild, H., &amp; Binkley, D. W.
+            (2007). Effective identifier names for comprehension and memory.
+            <em>Innovations in Systems and Software Engineering</em>,
+          </p>
+          <p><em>3</em>, 303–318.</p>
+          <p>
+            [20] Binkley, D., Lawrie, D., Maex, S., &amp; Morrell, C. (2009).
+            Identifier length and limited programmer memory.
+          </p>
+          <p>
+            <em>Science of Computer Programming</em>, <em>74</em>(7), 430–445.
+            https://doi.org/https://doi.org/10.1016/j.scico.2009.02.006
+          </p>
+          <p>[21] Hayakawa, S. I., &amp; Hayakawa, A. R. (1990).</p>
+          <p>
+            <em>Language </em> <em>in </em> <em>thought </em> <em>and </em>
+            <em>action</em>. Harcourt Brace Jovanovich. Retrieved from
+            https://books.google.com/books?id=0H1p2sMdyXEC
+          </p>
+          <p>[22] Brooks, F. P. (1995). <em>The mythical man-month</em></p>
+          <p>
+            <em>(anniversary </em> <em>ed.)</em>. USA: Addison-Wesley Longman
+            Publishing Co., Inc.
+          </p>
+          <p>[23] International Organization for</p>
+          <p>
+            Standardization<em>Milking machine installations - Vocabulary</em>
+            (Standard). (2007) (Vol. 2007). Geneva, CH.
+          </p>
+        </article>
+        <footer class="site-footer">
+          <p>Tom Benner · Second edition, 2023</p>
+          <p>Copyright © 2023 Tom Benner. All rights reserved.</p>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>

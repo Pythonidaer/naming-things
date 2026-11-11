@@ -1,34 +1,719 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Identifier types — Naming Things</title><meta name="description" content="Read Identifier types in Naming Things: The Hardest Problem in Software Engineering, second edition, by Tom Benner."><link rel="canonical" href="https://pythonidaer.github.io/naming-things/chapters/12-identifier-types/"><meta property="og:title" content="Identifier types — Naming Things"><meta property="og:description" content="Read Identifier types in Naming Things: The Hardest Problem in Software Engineering, second edition, by Tom Benner."><meta property="og:type" content="article"><meta property="og:url" content="https://pythonidaer.github.io/naming-things/chapters/12-identifier-types/"><meta property="og:image" content="https://pythonidaer.github.io/naming-things/share.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Naming Things. The Hardest Problem in Software Engineering. Tom Benner."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Identifier types — Naming Things"><meta name="twitter:description" content="Read Identifier types in Naming Things: The Hardest Problem in Software Engineering, second edition, by Tom Benner."><meta name="twitter:image" content="https://pythonidaer.github.io/naming-things/share.png"><meta name="twitter:image:alt" content="Naming Things by Tom Benner"><link rel="icon" href="/naming-things/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/naming-things/reset.css"><link rel="stylesheet" href="/naming-things/styles.css"><link rel="stylesheet" href="/naming-things/navigation.css"><script defer src="/naming-things/navigation.js"></script></head>
-<body><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="header-inner">
-<a class="wordmark" href="/naming-things/">Naming Things</a>
-<button id="nav-toggle" class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-navigation"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
-<nav id="site-navigation" class="nav-links" aria-label="Main navigation"><div class="desktop-links"><a href="/naming-things/">Contents</a><a href="/naming-things/roadmap/">Roadmap</a></div><div class="compact-links"><a class="contents-link" href="/naming-things/">Contents</a><div class="nav-group"><p>Introduction</p><ol><li><a href="/naming-things/chapters/1-purpose-of-this-book/"><span class="chapter-number">1</span><span>Purpose of this book</span></a></li><li><a href="/naming-things/chapters/2-why-is-naming-important/"><span class="chapter-number">2</span><span>Why is naming important?</span></a></li><li><a href="/naming-things/chapters/3-why-is-naming-hard/"><span class="chapter-number">3</span><span>Why is naming hard?</span></a></li><li><a href="/naming-things/chapters/4-scope-of-this-book/"><span class="chapter-number">4</span><span>Scope of this book</span></a></li></ol></div><div class="nav-group"><p>Principles</p><ol><li><a href="/naming-things/chapters/5-overview/"><span class="chapter-number">5</span><span>Overview</span></a></li><li><a href="/naming-things/chapters/6-understandability/"><span class="chapter-number">6</span><span>Understandability</span></a></li><li><a href="/naming-things/chapters/7-conciseness/"><span class="chapter-number">7</span><span>Conciseness</span></a></li><li><a href="/naming-things/chapters/8-consistency/"><span class="chapter-number">8</span><span>Consistency</span></a></li><li><a href="/naming-things/chapters/9-distinguishability/"><span class="chapter-number">9</span><span>Distinguishability</span></a></li></ol></div><div class="nav-group"><p>Application</p><ol><li><a href="/naming-things/chapters/10-overview/"><span class="chapter-number">10</span><span>Overview</span></a></li><li><a href="/naming-things/chapters/11-tradeoffs/"><span class="chapter-number">11</span><span>Tradeoffs</span></a></li><li><a href="/naming-things/chapters/12-identifier-types/" aria-current="page"><span class="chapter-number">12</span><span>Identifier types</span></a></li><li><a href="/naming-things/chapters/13-style-guides/"><span class="chapter-number">13</span><span>Style guides</span></a></li><li><a href="/naming-things/chapters/14-controlled-vocabularies/"><span class="chapter-number">14</span><span>Controlled vocabularies</span></a></li><li><a href="/naming-things/chapters/15-renaming/"><span class="chapter-number">15</span><span>Renaming</span></a></li><li><a href="/naming-things/chapters/16-domain-specific-names/"><span class="chapter-number">16</span><span>Domain-specific names</span></a></li><li><a href="/naming-things/chapters/17-developing-naming-skills/"><span class="chapter-number">17</span><span>Developing naming skills</span></a></li></ol></div><div class="nav-group"><p>Appendix</p><ol><li><a href="/naming-things/chapters/18-common-antonyms/"><span class="chapter-number">18</span><span>Common antonyms</span></a></li><li><a href="/naming-things/chapters/19-visually-similar-characters/"><span class="chapter-number">19</span><span>Visually similar characters</span></a></li><li><a href="/naming-things/chapters/20-rejected-principles/"><span class="chapter-number">20</span><span>Rejected principles</span></a></li></ol></div><div class="nav-extra"><a href="/naming-things/acknowledgements/">Acknowledgements</a><a href="/naming-things/references/">References</a><a href="/naming-things/roadmap/">Roadmap</a></div></div></nav></div></header>
-<div class="layout"><aside class="chapter-sidebar"><nav aria-label="Chapters"><a class="contents-link" href="/naming-things/">Contents</a><div class="nav-group"><p>Introduction</p><ol><li><a href="/naming-things/chapters/1-purpose-of-this-book/"><span class="chapter-number">1</span><span>Purpose of this book</span></a></li><li><a href="/naming-things/chapters/2-why-is-naming-important/"><span class="chapter-number">2</span><span>Why is naming important?</span></a></li><li><a href="/naming-things/chapters/3-why-is-naming-hard/"><span class="chapter-number">3</span><span>Why is naming hard?</span></a></li><li><a href="/naming-things/chapters/4-scope-of-this-book/"><span class="chapter-number">4</span><span>Scope of this book</span></a></li></ol></div><div class="nav-group"><p>Principles</p><ol><li><a href="/naming-things/chapters/5-overview/"><span class="chapter-number">5</span><span>Overview</span></a></li><li><a href="/naming-things/chapters/6-understandability/"><span class="chapter-number">6</span><span>Understandability</span></a></li><li><a href="/naming-things/chapters/7-conciseness/"><span class="chapter-number">7</span><span>Conciseness</span></a></li><li><a href="/naming-things/chapters/8-consistency/"><span class="chapter-number">8</span><span>Consistency</span></a></li><li><a href="/naming-things/chapters/9-distinguishability/"><span class="chapter-number">9</span><span>Distinguishability</span></a></li></ol></div><div class="nav-group"><p>Application</p><ol><li><a href="/naming-things/chapters/10-overview/"><span class="chapter-number">10</span><span>Overview</span></a></li><li><a href="/naming-things/chapters/11-tradeoffs/"><span class="chapter-number">11</span><span>Tradeoffs</span></a></li><li><a href="/naming-things/chapters/12-identifier-types/" aria-current="page"><span class="chapter-number">12</span><span>Identifier types</span></a></li><li><a href="/naming-things/chapters/13-style-guides/"><span class="chapter-number">13</span><span>Style guides</span></a></li><li><a href="/naming-things/chapters/14-controlled-vocabularies/"><span class="chapter-number">14</span><span>Controlled vocabularies</span></a></li><li><a href="/naming-things/chapters/15-renaming/"><span class="chapter-number">15</span><span>Renaming</span></a></li><li><a href="/naming-things/chapters/16-domain-specific-names/"><span class="chapter-number">16</span><span>Domain-specific names</span></a></li><li><a href="/naming-things/chapters/17-developing-naming-skills/"><span class="chapter-number">17</span><span>Developing naming skills</span></a></li></ol></div><div class="nav-group"><p>Appendix</p><ol><li><a href="/naming-things/chapters/18-common-antonyms/"><span class="chapter-number">18</span><span>Common antonyms</span></a></li><li><a href="/naming-things/chapters/19-visually-similar-characters/"><span class="chapter-number">19</span><span>Visually similar characters</span></a></li><li><a href="/naming-things/chapters/20-rejected-principles/"><span class="chapter-number">20</span><span>Rejected principles</span></a></li></ol></div><div class="nav-extra"><a href="/naming-things/acknowledgements/">Acknowledgements</a><a href="/naming-things/references/">References</a><a href="/naming-things/roadmap/">Roadmap</a></div></nav></aside><main id="main" tabindex="-1"><p class="eyebrow">Application / Chapter 12</p><h1>Identifier types</h1><article class="prose"><h2 id="section-12-1">12.1. Overview</h2><p>Naming conventions for each identifier type (e.g., classes, variables, methods, etc) vary across programming languages, development frameworks, and their communities, so we cannot provide many precise rules that strictly apply globally, but we will discuss some general principles. When using naming rules for identifier types, consistency of application is important for many of the same reasons that it’s important in naming in general.</p><p>With identifier type-specific naming conventions, each language often has well-developed conventions (e.g., the casing of method names, or how to name methods that return booleans), and usage of those conventions makes a codebase understandable to engineers familiar with that language. So, consistency with language-specific conventions can be more important than strict adherence to all of the following recommendations.</p><h2 id="section-12-2">12.2. Classes</h2><p><strong>Part(s) of speech:</strong><em> Nouns or noun phrases (see </em><em>Use</em> <em>accurate parts of speech</em><em>)</em></p><p>Since a class is a template for an object, its name should be a singular noun or a noun phrase that names that type of object.</p><p>The use of verbs as class names is discouraged. Robert C. Martin explicitly writes in Clean Code [1] that “a class name should not be a verb.” When a class has a verb as a name, it indicates that instances of it are actions, which is incorrect: the action occurs when a method is called.</p><pre><code># Bad</code></pre><pre><code># This variable has an action as a name, but an action is not
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Identifier types — Naming Things</title>
+    <meta
+      name="description"
+      content="Read Identifier types in Naming Things: The Hardest Problem in Software Engineering, second edition, by Tom Benner."
+    />
+    <link
+      rel="canonical"
+      href="https://pythonidaer.github.io/naming-things/chapters/12-identifier-types/"
+    />
+    <meta property="og:title" content="Identifier types — Naming Things" />
+    <meta
+      property="og:description"
+      content="Read Identifier types in Naming Things: The Hardest Problem in Software Engineering, second edition, by Tom Benner."
+    />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:url"
+      content="https://pythonidaer.github.io/naming-things/chapters/12-identifier-types/"
+    />
+    <meta
+      property="og:image"
+      content="https://pythonidaer.github.io/naming-things/share.png"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Naming Things. The Hardest Problem in Software Engineering. Tom Benner."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Identifier types — Naming Things" />
+    <meta
+      name="twitter:description"
+      content="Read Identifier types in Naming Things: The Hardest Problem in Software Engineering, second edition, by Tom Benner."
+    />
+    <meta
+      name="twitter:image"
+      content="https://pythonidaer.github.io/naming-things/share.png"
+    />
+    <meta name="twitter:image:alt" content="Naming Things by Tom Benner" />
+    <link rel="icon" href="/naming-things/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/naming-things/reset.css" />
+    <link rel="stylesheet" href="/naming-things/styles.css" />
+    <link rel="stylesheet" href="/naming-things/navigation.css" />
+    <script defer src="/naming-things/navigation.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="wordmark" href="/naming-things/">Naming Things</a>
+        <button
+          id="nav-toggle"
+          class="nav-toggle"
+          type="button"
+          aria-label="Open navigation"
+          aria-expanded="false"
+          aria-controls="site-navigation"
+        >
+          <span aria-hidden="true"></span><span aria-hidden="true"></span
+          ><span aria-hidden="true"></span>
+        </button>
+        <nav
+          id="site-navigation"
+          class="nav-links"
+          aria-label="Main navigation"
+        >
+          <div class="desktop-links">
+            <a href="/naming-things/">Contents</a
+            ><a href="/naming-things/roadmap/">Roadmap</a>
+          </div>
+          <div class="compact-links">
+            <a class="contents-link" href="/naming-things/">Contents</a>
+            <div class="nav-group">
+              <p>Introduction</p>
+              <ol>
+                <li>
+                  <a href="/naming-things/chapters/1-purpose-of-this-book/"
+                    ><span class="chapter-number">1</span
+                    ><span>Purpose of this book</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/2-why-is-naming-important/"
+                    ><span class="chapter-number">2</span
+                    ><span>Why is naming important?</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/3-why-is-naming-hard/"
+                    ><span class="chapter-number">3</span
+                    ><span>Why is naming hard?</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/4-scope-of-this-book/"
+                    ><span class="chapter-number">4</span
+                    ><span>Scope of this book</span></a
+                  >
+                </li>
+              </ol>
+            </div>
+            <div class="nav-group">
+              <p>Principles</p>
+              <ol>
+                <li>
+                  <a href="/naming-things/chapters/5-overview/"
+                    ><span class="chapter-number">5</span
+                    ><span>Overview</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/6-understandability/"
+                    ><span class="chapter-number">6</span
+                    ><span>Understandability</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/7-conciseness/"
+                    ><span class="chapter-number">7</span
+                    ><span>Conciseness</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/8-consistency/"
+                    ><span class="chapter-number">8</span
+                    ><span>Consistency</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/9-distinguishability/"
+                    ><span class="chapter-number">9</span
+                    ><span>Distinguishability</span></a
+                  >
+                </li>
+              </ol>
+            </div>
+            <div class="nav-group">
+              <p>Application</p>
+              <ol>
+                <li>
+                  <a href="/naming-things/chapters/10-overview/"
+                    ><span class="chapter-number">10</span
+                    ><span>Overview</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/11-tradeoffs/"
+                    ><span class="chapter-number">11</span
+                    ><span>Tradeoffs</span></a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/naming-things/chapters/12-identifier-types/"
+                    aria-current="page"
+                    ><span class="chapter-number">12</span
+                    ><span>Identifier types</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/13-style-guides/"
+                    ><span class="chapter-number">13</span
+                    ><span>Style guides</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/14-controlled-vocabularies/"
+                    ><span class="chapter-number">14</span
+                    ><span>Controlled vocabularies</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/15-renaming/"
+                    ><span class="chapter-number">15</span
+                    ><span>Renaming</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/16-domain-specific-names/"
+                    ><span class="chapter-number">16</span
+                    ><span>Domain-specific names</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/17-developing-naming-skills/"
+                    ><span class="chapter-number">17</span
+                    ><span>Developing naming skills</span></a
+                  >
+                </li>
+              </ol>
+            </div>
+            <div class="nav-group">
+              <p>Appendix</p>
+              <ol>
+                <li>
+                  <a href="/naming-things/chapters/18-common-antonyms/"
+                    ><span class="chapter-number">18</span
+                    ><span>Common antonyms</span></a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/naming-things/chapters/19-visually-similar-characters/"
+                    ><span class="chapter-number">19</span
+                    ><span>Visually similar characters</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/20-rejected-principles/"
+                    ><span class="chapter-number">20</span
+                    ><span>Rejected principles</span></a
+                  >
+                </li>
+              </ol>
+            </div>
+            <div class="nav-extra">
+              <a href="/naming-things/acknowledgements/">Acknowledgements</a
+              ><a href="/naming-things/references/">References</a
+              ><a href="/naming-things/roadmap/">Roadmap</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <div class="layout">
+      <aside class="chapter-sidebar">
+        <nav aria-label="Chapters">
+          <a class="contents-link" href="/naming-things/">Contents</a>
+          <div class="nav-group">
+            <p>Introduction</p>
+            <ol>
+              <li>
+                <a href="/naming-things/chapters/1-purpose-of-this-book/"
+                  ><span class="chapter-number">1</span
+                  ><span>Purpose of this book</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/2-why-is-naming-important/"
+                  ><span class="chapter-number">2</span
+                  ><span>Why is naming important?</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/3-why-is-naming-hard/"
+                  ><span class="chapter-number">3</span
+                  ><span>Why is naming hard?</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/4-scope-of-this-book/"
+                  ><span class="chapter-number">4</span
+                  ><span>Scope of this book</span></a
+                >
+              </li>
+            </ol>
+          </div>
+          <div class="nav-group">
+            <p>Principles</p>
+            <ol>
+              <li>
+                <a href="/naming-things/chapters/5-overview/"
+                  ><span class="chapter-number">5</span><span>Overview</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/6-understandability/"
+                  ><span class="chapter-number">6</span
+                  ><span>Understandability</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/7-conciseness/"
+                  ><span class="chapter-number">7</span
+                  ><span>Conciseness</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/8-consistency/"
+                  ><span class="chapter-number">8</span
+                  ><span>Consistency</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/9-distinguishability/"
+                  ><span class="chapter-number">9</span
+                  ><span>Distinguishability</span></a
+                >
+              </li>
+            </ol>
+          </div>
+          <div class="nav-group">
+            <p>Application</p>
+            <ol>
+              <li>
+                <a href="/naming-things/chapters/10-overview/"
+                  ><span class="chapter-number">10</span
+                  ><span>Overview</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/11-tradeoffs/"
+                  ><span class="chapter-number">11</span
+                  ><span>Tradeoffs</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="/naming-things/chapters/12-identifier-types/"
+                  aria-current="page"
+                  ><span class="chapter-number">12</span
+                  ><span>Identifier types</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/13-style-guides/"
+                  ><span class="chapter-number">13</span
+                  ><span>Style guides</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/14-controlled-vocabularies/"
+                  ><span class="chapter-number">14</span
+                  ><span>Controlled vocabularies</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/15-renaming/"
+                  ><span class="chapter-number">15</span
+                  ><span>Renaming</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/16-domain-specific-names/"
+                  ><span class="chapter-number">16</span
+                  ><span>Domain-specific names</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/17-developing-naming-skills/"
+                  ><span class="chapter-number">17</span
+                  ><span>Developing naming skills</span></a
+                >
+              </li>
+            </ol>
+          </div>
+          <div class="nav-group">
+            <p>Appendix</p>
+            <ol>
+              <li>
+                <a href="/naming-things/chapters/18-common-antonyms/"
+                  ><span class="chapter-number">18</span
+                  ><span>Common antonyms</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="/naming-things/chapters/19-visually-similar-characters/"
+                  ><span class="chapter-number">19</span
+                  ><span>Visually similar characters</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/20-rejected-principles/"
+                  ><span class="chapter-number">20</span
+                  ><span>Rejected principles</span></a
+                >
+              </li>
+            </ol>
+          </div>
+          <div class="nav-extra">
+            <a href="/naming-things/acknowledgements/">Acknowledgements</a
+            ><a href="/naming-things/references/">References</a
+            ><a href="/naming-things/roadmap/">Roadmap</a>
+          </div>
+        </nav>
+      </aside>
+      <main id="main" tabindex="-1">
+        <p class="eyebrow">Application / Chapter 12</p>
+        <h1>Identifier types</h1>
+        <article class="prose">
+          <h2 id="section-12-1">12.1. Overview</h2>
+          <p>
+            Naming conventions for each identifier type (e.g., classes,
+            variables, methods, etc) vary across programming languages,
+            development frameworks, and their communities, so we cannot provide
+            many precise rules that strictly apply globally, but we will discuss
+            some general principles. When using naming rules for identifier
+            types, consistency of application is important for many of the same
+            reasons that it’s important in naming in general.
+          </p>
+          <p>
+            With identifier type-specific naming conventions, each language
+            often has well-developed conventions (e.g., the casing of method
+            names, or how to name methods that return booleans), and usage of
+            those conventions makes a codebase understandable to engineers
+            familiar with that language. So, consistency with language-specific
+            conventions can be more important than strict adherence to all of
+            the following recommendations.
+          </p>
+          <h2 id="section-12-2">12.2. Classes</h2>
+          <p>
+            <strong>Part(s) of speech:</strong
+            ><em> Nouns or noun phrases (see </em><em>Use</em>
+            <em>accurate parts of speech</em><em>)</em>
+          </p>
+          <p>
+            Since a class is a template for an object, its name should be a
+            singular noun or a noun phrase that names that type of object.
+          </p>
+          <p>
+            The use of verbs as class names is discouraged. Robert C. Martin
+            explicitly writes in Clean Code [1] that “a class name should not be
+            a verb.” When a class has a verb as a name, it indicates that
+            instances of it are actions, which is incorrect: the action occurs
+            when a method is called.
+          </p>
+          <pre><code># Bad</code></pre>
+          <pre><code># This variable has an action as a name, but an action is not
 taking place
-validate_user = ValidateUser(user)</code></pre><pre><code># Good</code></pre><pre><code>user_validator = UserValidator(user)</code></pre><p>Additionally, when methods are called on the object (or on the class), they create a sequence of two verbs, but only the second verb is occurring, which can be confusing:</p><pre><code># Bad</code></pre><pre><code># Only the email is being validated, even though the verb
+validate_user = ValidateUser(user)</code></pre>
+          <pre><code># Good</code></pre>
+          <pre><code>user_validator = UserValidator(user)</code></pre>
+          <p>
+            Additionally, when methods are called on the object (or on the
+            class), they create a sequence of two verbs, but only the second
+            verb is occurring, which can be confusing:
+          </p>
+          <pre><code># Bad</code></pre>
+          <pre><code># Only the email is being validated, even though the verb
 &quot;validate_user&quot; appears multiple times
 validate_user = ValidateUser(user)
-validate_user.validate_email()</code></pre><pre><code># Good</code></pre><pre><code>user_validator = UserValidator(user)
-user_validator.validate_email()</code></pre><p>If the casing convention is camel casing, use a single convention for camel-cased acronyms to avoid inconsistent casing. For example, when naming an XML parser class and an HTML parser class, they should be named either</p><p><code>XmlParser</code> and <code>HtmlParser</code>, or <code>XMLParser</code> and <code>HTMLParser</code>, and not use inconsistent casing, like <code>XmlParser</code> and</p><p><code>HTMLParser</code>. This prevents a consistency violation.</p><h2 id="section-12-3">12.3. Variables</h2><p><strong>Part(s) of speech:</strong><em> Nouns, noun phrases, or linking</em> <em>verb/subject complement (see </em><em>Use accurate parts of</em> <em>speech</em><em>)</em></p><p>Variables typically represent objects and values, so they should typically have names that are nouns or noun phrases. One exception to this is booleans, which should be named using a linking verb and subject complement, as described in Booleans. Instance variables, class variables, and fields are all similar enough in usage that these guidelines can be applied to them.</p><p>Variables should often use the same name as the relevant class or data type, unless there’s a strong reason not to. In object-oriented programming, this means that a variable that represents an instance of a <code>User</code> should often have the word <code>user</code> in it:</p><pre><code># Bad
-person = User.where(id=user_id)[0]</code></pre><pre><code># Good
-user = User.where(id=user_id)[0]</code></pre><p>The exception to this is if there is a meaningful distinction between what the variable contains and the class that should be communicated. For example, in a blog application, it may be preferable to use <code>author</code> instead of <code>user</code> when referring to a blog post’s author, even if the class is <code>User</code>, especially if there are other <code>User</code> objects nearby or if the usage of the variable is only related to the user’s role as an author.</p><p>If a variable is unused but necessary, like an unused variable used during multiple assignment, follow the programming language’s convention for whether it should be unnamed. For example, if we’re reading command-line arguments using Python’s <code>sys.argv</code> and we don’t use the first argument, it shouldn’t be named:</p><pre><code># Bad</code></pre><pre><code># If the `command` variable is unused but is still named, it adds
+validate_user.validate_email()</code></pre>
+          <pre><code># Good</code></pre>
+          <pre><code>user_validator = UserValidator(user)
+user_validator.validate_email()</code></pre>
+          <p>
+            If the casing convention is camel casing, use a single convention
+            for camel-cased acronyms to avoid inconsistent casing. For example,
+            when naming an XML parser class and an HTML parser class, they
+            should be named either
+          </p>
+          <p>
+            <code>XmlParser</code> and <code>HtmlParser</code>, or
+            <code>XMLParser</code> and <code>HTMLParser</code>, and not use
+            inconsistent casing, like <code>XmlParser</code> and
+          </p>
+          <p><code>HTMLParser</code>. This prevents a consistency violation.</p>
+          <h2 id="section-12-3">12.3. Variables</h2>
+          <p>
+            <strong>Part(s) of speech:</strong
+            ><em> Nouns, noun phrases, or linking</em>
+            <em>verb/subject complement (see </em><em>Use accurate parts of</em>
+            <em>speech</em><em>)</em>
+          </p>
+          <p>
+            Variables typically represent objects and values, so they should
+            typically have names that are nouns or noun phrases. One exception
+            to this is booleans, which should be named using a linking verb and
+            subject complement, as described in Booleans. Instance variables,
+            class variables, and fields are all similar enough in usage that
+            these guidelines can be applied to them.
+          </p>
+          <p>
+            Variables should often use the same name as the relevant class or
+            data type, unless there’s a strong reason not to. In object-oriented
+            programming, this means that a variable that represents an instance
+            of a <code>User</code> should often have the word
+            <code>user</code> in it:
+          </p>
+          <pre><code># Bad
+person = User.where(id=user_id)[0]</code></pre>
+          <pre><code># Good
+user = User.where(id=user_id)[0]</code></pre>
+          <p>
+            The exception to this is if there is a meaningful distinction
+            between what the variable contains and the class that should be
+            communicated. For example, in a blog application, it may be
+            preferable to use <code>author</code> instead of
+            <code>user</code> when referring to a blog post’s author, even if
+            the class is <code>User</code>, especially if there are other
+            <code>User</code> objects nearby or if the usage of the variable is
+            only related to the user’s role as an author.
+          </p>
+          <p>
+            If a variable is unused but necessary, like an unused variable used
+            during multiple assignment, follow the programming language’s
+            convention for whether it should be unnamed. For example, if we’re
+            reading command-line arguments using Python’s
+            <code>sys.argv</code> and we don’t use the first argument, it
+            shouldn’t be named:
+          </p>
+          <pre><code># Bad</code></pre>
+          <pre><code># If the `command` variable is unused but is still named, it adds
 unnecessary screen space and cognitive load:
-command, old_file_path, new_file_path = sys.argv</code></pre><pre><code># Good</code></pre><pre><code>_, old_file_path, new_file_path = sys.argv</code></pre><p>Since a variable’s name should reflect the value that it represents, there are special guidelines for variables representing certain types of values, as described below.</p><h3 id="section-12-3-1">12.3.1. Booleans</h3><p>Boolean variables and boolean-returning methods correspond to a true or false value, and their names should explicitly indicate that. Their names should either be a linking verb and subject complement (e.g., <code>is_complete</code>, <code>has_admin_access</code>) or an adjective, especially if the language supports question marks at the end of methods</p><p>(e.g., <code>complete?</code>, <code>accessible_to_admins?</code>). This may vary across language conventions, though.</p><p>In particular, do not use names that could be misinterpreted as meaning a non-boolean concept. For example, if a variable stores a boolean representing whether or not there was an error, do not name it <code>error</code>. A reader is likely to interpret a variable named <code>error</code> as containing an exception object, rather than containing a boolean.</p><p>A common violation is the use of a noun that the boolean describes instead of the use of an adjective about the quality that the boolean describes. For example, if a method represents whether or not a process is complete, it should be named <code>is_complete</code> or <code>complete?</code>, not <code>status</code>. The word “status” indicates that there are multiple statuses, and a reader may assume that <code>status</code> represents a string or an enum.</p><pre><code># Bad</code></pre><pre><code># What does this mean?!
+command, old_file_path, new_file_path = sys.argv</code></pre>
+          <pre><code># Good</code></pre>
+          <pre><code>_, old_file_path, new_file_path = sys.argv</code></pre>
+          <p>
+            Since a variable’s name should reflect the value that it represents,
+            there are special guidelines for variables representing certain
+            types of values, as described below.
+          </p>
+          <h3 id="section-12-3-1">12.3.1. Booleans</h3>
+          <p>
+            Boolean variables and boolean-returning methods correspond to a true
+            or false value, and their names should explicitly indicate that.
+            Their names should either be a linking verb and subject complement
+            (e.g., <code>is_complete</code>, <code>has_admin_access</code>) or
+            an adjective, especially if the language supports question marks at
+            the end of methods
+          </p>
+          <p>
+            (e.g., <code>complete?</code>, <code>accessible_to_admins?</code>).
+            This may vary across language conventions, though.
+          </p>
+          <p>
+            In particular, do not use names that could be misinterpreted as
+            meaning a non-boolean concept. For example, if a variable stores a
+            boolean representing whether or not there was an error, do not name
+            it <code>error</code>. A reader is likely to interpret a variable
+            named <code>error</code> as containing an exception object, rather
+            than containing a boolean.
+          </p>
+          <p>
+            A common violation is the use of a noun that the boolean describes
+            instead of the use of an adjective about the quality that the
+            boolean describes. For example, if a method represents whether or
+            not a process is complete, it should be named
+            <code>is_complete</code> or <code>complete?</code>, not
+            <code>status</code>. The word “status” indicates that there are
+            multiple statuses, and a reader may assume that
+            <code>status</code> represents a string or an enum.
+          </p>
+          <pre><code># Bad</code></pre>
+          <pre><code># What does this mean?!
 if process.status():
-  send_confirmation()</code></pre><pre><code># Good</code></pre><pre><code>if process.is_complete():
-  send_confirmation()</code></pre><h3 id="section-12-3-2">12.3.2. Collections</h3><p>Collections should have plural names, as described in Use correct pluralization. They should also not include type information in their name (e.g., suffixes of <code>_list</code> or</p><p><code>_array</code>), as described in Omit metadata.</p><h3 id="section-12-3-3">12.3.3. Hash maps</h3><p>Mappings of keys to values (e.g., hash maps, hash tables, dictionaries, etc) should have names that tell the reader exactly what they include. This is especially important in dynamically-typed languages where type inspection is difficult or impossible. Their names should include the names of their keys and values, like one of the following forms for a mapping of user IDs to user objects:</p><p><code>user_id_to_user</code> <code>user_ids_users</code> <code>users_by_id</code></p><p>The first two forms above are slightly preferable to the last form since their words have the same order as the key and value, which is the order that readers typically think of for hash maps.</p><pre><code># Bad</code></pre><pre><code># These two variable names don&#x27;t make it clear what the variable
+  send_confirmation()</code></pre>
+          <pre><code># Good</code></pre>
+          <pre><code>if process.is_complete():
+  send_confirmation()</code></pre>
+          <h3 id="section-12-3-2">12.3.2. Collections</h3>
+          <p>
+            Collections should have plural names, as described in Use correct
+            pluralization. They should also not include type information in
+            their name (e.g., suffixes of <code>_list</code> or
+          </p>
+          <p><code>_array</code>), as described in Omit metadata.</p>
+          <h3 id="section-12-3-3">12.3.3. Hash maps</h3>
+          <p>
+            Mappings of keys to values (e.g., hash maps, hash tables,
+            dictionaries, etc) should have names that tell the reader exactly
+            what they include. This is especially important in dynamically-typed
+            languages where type inspection is difficult or impossible. Their
+            names should include the names of their keys and values, like one of
+            the following forms for a mapping of user IDs to user objects:
+          </p>
+          <p>
+            <code>user_id_to_user</code> <code>user_ids_users</code>
+            <code>users_by_id</code>
+          </p>
+          <p>
+            The first two forms above are slightly preferable to the last form
+            since their words have the same order as the key and value, which is
+            the order that readers typically think of for hash maps.
+          </p>
+          <pre><code># Bad</code></pre>
+          <pre><code># These two variable names don&#x27;t make it clear what the variable
 contains
 user_dict = { 1: user_1, 2: user_2 }
-user_ids = { 1: user_1, 2: user_2 }</code></pre><pre><code># Good</code></pre><pre><code># This variable name makes it clear that the variable contains a
+user_ids = { 1: user_1, 2: user_2 }</code></pre>
+          <pre><code># Good</code></pre>
+          <pre><code># This variable name makes it clear that the variable contains a
 mapping of user IDs to users
-user_id_to_user = { 1: user_1, 2: user_2 }</code></pre><pre><code># This name also makes iteration straightforward:
+user_id_to_user = { 1: user_1, 2: user_2 }</code></pre>
+          <pre><code># This name also makes iteration straightforward:
 for user_id, user in user_id_to_user.items():
   print(user_id)
-  print(user.full_name)</code></pre><h2 id="section-12-4">12.4. Methods</h2><p><strong>Part(s) of speech:</strong><em> Verbs, verb phrases, or linking</em> <em>verb/subject complement (see </em><em>Use accurate parts of</em> <em>speech</em><em>)</em></p><p>Method names should typically be verbs or verb phrases. One exception is methods that return booleans (see Booleans).</p><p>The name should describe what the method does. If a method does multiple things, the author should consider the single-responsibility principle to determine if there’s a refactoring opportunity. If not, they should consider how to use the appropriate level of abstraction and omit implementation details.</p><p>Methods should ideally not have side effects, but if they do have a side effect, it should be mentioned in the name. A method named <code>find_user</code> should not also update the user. If it updates the user, it should have a name that indicates this.</p><p>Software applications often have a large quantity and variety of methods, and the details of these methods can change frequently. As a result, balancing conciseness and understandability is particularly important for method naming.</p><h2 id="section-12-5">12.5. Method arguments</h2><p><strong>Part(s) of speech:</strong><em> Nouns, noun phrases, or linking</em> <em>verb/subject complement (see </em><em>Use accurate parts of</em> <em>speech</em><em>)</em></p><p>While method arguments are similar to variables, some guidelines are specific to them. Method argument names typically indicate to the reader what data should be passed to the method, and they should make this very clear. Single-character names should be avoided since they make this particularly difficult:</p><pre><code># Bad</code></pre><pre><code># It&#x27;s unclear what type x and y should be, and in which
+  print(user.full_name)</code></pre>
+          <h2 id="section-12-4">12.4. Methods</h2>
+          <p>
+            <strong>Part(s) of speech:</strong
+            ><em> Verbs, verb phrases, or linking</em>
+            <em>verb/subject complement (see </em><em>Use accurate parts of</em>
+            <em>speech</em><em>)</em>
+          </p>
+          <p>
+            Method names should typically be verbs or verb phrases. One
+            exception is methods that return booleans (see Booleans).
+          </p>
+          <p>
+            The name should describe what the method does. If a method does
+            multiple things, the author should consider the
+            single-responsibility principle to determine if there’s a
+            refactoring opportunity. If not, they should consider how to use the
+            appropriate level of abstraction and omit implementation details.
+          </p>
+          <p>
+            Methods should ideally not have side effects, but if they do have a
+            side effect, it should be mentioned in the name. A method named
+            <code>find_user</code> should not also update the user. If it
+            updates the user, it should have a name that indicates this.
+          </p>
+          <p>
+            Software applications often have a large quantity and variety of
+            methods, and the details of these methods can change frequently. As
+            a result, balancing conciseness and understandability is
+            particularly important for method naming.
+          </p>
+          <h2 id="section-12-5">12.5. Method arguments</h2>
+          <p>
+            <strong>Part(s) of speech:</strong
+            ><em> Nouns, noun phrases, or linking</em>
+            <em>verb/subject complement (see </em><em>Use accurate parts of</em>
+            <em>speech</em><em>)</em>
+          </p>
+          <p>
+            While method arguments are similar to variables, some guidelines are
+            specific to them. Method argument names typically indicate to the
+            reader what data should be passed to the method, and they should
+            make this very clear. Single-character names should be avoided since
+            they make this particularly difficult:
+          </p>
+          <pre><code># Bad</code></pre>
+          <pre><code># It&#x27;s unclear what type x and y should be, and in which
 direction the copying is occurring
 def copy_permissions(x, y):
   y.permissions = x.permissions
 # It&#x27;s unclear in which direction the copying is occurring
 def copy_permissions(user_1, user_2):
-  user_2.permissions = user_1.permissions</code></pre><pre><code># Good</code></pre><pre><code>def copy_permissions(source_user, target_user):
-  target_user.permissions = source_user.permissions</code></pre><p>Similar to variables that are unused but necessary, method arguments that are unused but necessary should also follow the programming language’s convention for whether they should be unnamed.</p><h2 id="section-12-6">12.6. Interfaces</h2><p><strong>Part(s) of speech:</strong><em> Nouns, noun phrases, or adjectives (see</em></p><p><em>Use accurate parts of speech</em><em>)</em></p><p>Interface naming conventions vary by programming language, but the “Use the appropriate level of abstraction” rule and consistency are both particularly important when naming them. As an example, two common conventions are to use an “-able” suffix (e.g., <code>Writable</code>) or to use a “Can” prefix (e.g., <code>CanWrite</code>), but it’s preferable to consistently use only a single convention when possible.</p><h2 id="section-12-7">12.7. Constants</h2><p><strong>Part(s) of speech:</strong><em> Nouns, noun phrases, or linking</em> <em>verb/subject complement (see </em><em>Use accurate parts of</em> <em>speech</em><em>)</em></p><p>Each programming language typically has a strong convention on constant naming, which should be followed. The convention is often to use all uppercase with words separated by underscores (e.g., <code>MAX_FILE_SIZE_IN_BYTES</code>). If this is the convention, do not use more than one underscore between two words unless there is a clear convention for doing so.</p><h2 id="section-12-8">12.8. Packages/modules/namespaces</h2><p>Naming conventions for packages, modules, namespaces, and similar constructs vary by programming language and by organization. Depending on the context, these names can either be literal (e.g., <code>configparsing</code>) or be figurative, like a project name (e.g., <code>zeus</code>). Package naming and project naming are large topics that are outside of the scope of this book, which focuses on identifier naming. Domain-Driven Design [16] is one starting point for these topics.</p></article><nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/naming-things/chapters/11-tradeoffs/"><span>Previous chapter</span>Tradeoffs</a><a href="/naming-things/chapters/13-style-guides/"><span>Next chapter</span>Style guides</a></nav><footer class="site-footer"><p>Tom Benner · Second edition, 2023</p><p>Copyright © 2023 Tom Benner. All rights reserved.</p></footer></main><aside class="page-toc" aria-label="On this page"><p>On this page</p><a class="depth-2" href="#section-12-1">12.1. Overview</a><a class="depth-2" href="#section-12-2">12.2. Classes</a><a class="depth-2" href="#section-12-3">12.3. Variables</a><a class="depth-3" href="#section-12-3-1">12.3.1. Booleans</a><a class="depth-3" href="#section-12-3-2">12.3.2. Collections</a><a class="depth-3" href="#section-12-3-3">12.3.3. Hash maps</a><a class="depth-2" href="#section-12-4">12.4. Methods</a><a class="depth-2" href="#section-12-5">12.5. Method arguments</a><a class="depth-2" href="#section-12-6">12.6. Interfaces</a><a class="depth-2" href="#section-12-7">12.7. Constants</a><a class="depth-2" href="#section-12-8">12.8. Packages/modules/namespaces</a></aside></div></body></html>
+  user_2.permissions = user_1.permissions</code></pre>
+          <pre><code># Good</code></pre>
+          <pre><code>def copy_permissions(source_user, target_user):
+  target_user.permissions = source_user.permissions</code></pre>
+          <p>
+            Similar to variables that are unused but necessary, method arguments
+            that are unused but necessary should also follow the programming
+            language’s convention for whether they should be unnamed.
+          </p>
+          <h2 id="section-12-6">12.6. Interfaces</h2>
+          <p>
+            <strong>Part(s) of speech:</strong
+            ><em> Nouns, noun phrases, or adjectives (see</em>
+          </p>
+          <p><em>Use accurate parts of speech</em><em>)</em></p>
+          <p>
+            Interface naming conventions vary by programming language, but the
+            “Use the appropriate level of abstraction” rule and consistency are
+            both particularly important when naming them. As an example, two
+            common conventions are to use an “-able” suffix (e.g.,
+            <code>Writable</code>) or to use a “Can” prefix (e.g.,
+            <code>CanWrite</code>), but it’s preferable to consistently use only
+            a single convention when possible.
+          </p>
+          <h2 id="section-12-7">12.7. Constants</h2>
+          <p>
+            <strong>Part(s) of speech:</strong
+            ><em> Nouns, noun phrases, or linking</em>
+            <em>verb/subject complement (see </em><em>Use accurate parts of</em>
+            <em>speech</em><em>)</em>
+          </p>
+          <p>
+            Each programming language typically has a strong convention on
+            constant naming, which should be followed. The convention is often
+            to use all uppercase with words separated by underscores (e.g.,
+            <code>MAX_FILE_SIZE_IN_BYTES</code>). If this is the convention, do
+            not use more than one underscore between two words unless there is a
+            clear convention for doing so.
+          </p>
+          <h2 id="section-12-8">12.8. Packages/modules/namespaces</h2>
+          <p>
+            Naming conventions for packages, modules, namespaces, and similar
+            constructs vary by programming language and by organization.
+            Depending on the context, these names can either be literal (e.g.,
+            <code>configparsing</code>) or be figurative, like a project name
+            (e.g., <code>zeus</code>). Package naming and project naming are
+            large topics that are outside of the scope of this book, which
+            focuses on identifier naming. Domain-Driven Design [16] is one
+            starting point for these topics.
+          </p>
+        </article>
+        <nav class="chapter-pagination" aria-label="Chapter navigation">
+          <a href="/naming-things/chapters/11-tradeoffs/"
+            ><span>Previous chapter</span>Tradeoffs</a
+          ><a href="/naming-things/chapters/13-style-guides/"
+            ><span>Next chapter</span>Style guides</a
+          >
+        </nav>
+        <footer class="site-footer">
+          <p>Tom Benner · Second edition, 2023</p>
+          <p>Copyright © 2023 Tom Benner. All rights reserved.</p>
+        </footer>
+      </main>
+      <aside class="page-toc" aria-label="On this page">
+        <p>On this page</p>
+        <a class="depth-2" href="#section-12-1">12.1. Overview</a
+        ><a class="depth-2" href="#section-12-2">12.2. Classes</a
+        ><a class="depth-2" href="#section-12-3">12.3. Variables</a
+        ><a class="depth-3" href="#section-12-3-1">12.3.1. Booleans</a
+        ><a class="depth-3" href="#section-12-3-2">12.3.2. Collections</a
+        ><a class="depth-3" href="#section-12-3-3">12.3.3. Hash maps</a
+        ><a class="depth-2" href="#section-12-4">12.4. Methods</a
+        ><a class="depth-2" href="#section-12-5">12.5. Method arguments</a
+        ><a class="depth-2" href="#section-12-6">12.6. Interfaces</a
+        ><a class="depth-2" href="#section-12-7">12.7. Constants</a
+        ><a class="depth-2" href="#section-12-8"
+          >12.8. Packages/modules/namespaces</a
+        >
+      </aside>
+    </div>
+  </body>
+</html>

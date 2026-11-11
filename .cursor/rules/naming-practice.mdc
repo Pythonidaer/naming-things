@@ -1,0 +1,13 @@
+---
+description: Apply naming rules through a style guide, a shared vocabulary, domain lookup, and a rename decision. Use when setting team conventions or deciding whether to rename.
+alwaysApply: false
+---
+
+# Practice
+
+- Start from a popular style guide for the language and enforce what a linter can catch in the editor, review, and CI. Many naming judgments cannot be linted. Those stay in review. [Style guides](https://pythonidaer.github.io/naming-things/chapters/13-style-guides/)
+- Record one term per domain concept and use it in code and discussion. This is the project’s controlled vocabulary (ubiquitous language). [Controlled vocabularies](https://pythonidaer.github.io/naming-things/chapters/14-controlled-vocabularies/)
+- For a domain term, check the public language of that field, then a domain expert, then a teammate who will read the name. A word that is obvious to the author can be opaque to the next reader. [Domain-specific names](https://pythonidaer.github.io/naming-things/chapters/16-domain-specific-names/)
+- Rename when the ongoing cost of the bad name exceeds the cost of changing it. Ongoing cost is slower comprehension, weaker recall, and harder conversation. Change cost is choosing the name, aligning the people who depend on it, and editing the uses. A partial rename spends consistency. Take it only with an explicit reason. [Renaming](https://pythonidaer.github.io/naming-things/chapters/15-renaming/)
+- For a non-trivial rename, write down scope, stakeholders, the new name, ongoing cost, and change cost, and get the same kind of approval the team uses for other design decisions. [§15.3](https://pythonidaer.github.io/naming-things/chapters/15-renaming/#section-15-3)
+- Practice on the next new name in the code you are already editing. Give the same kind of feedback on names in review. [Developing naming skills](https://pythonidaer.github.io/naming-things/chapters/17-developing-naming-skills/)

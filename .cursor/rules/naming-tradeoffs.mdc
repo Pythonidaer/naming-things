@@ -1,0 +1,15 @@
+---
+description: Resolve conflicts between naming principles. Use when a clearer name, a shorter name, and an existing name disagree.
+alwaysApply: false
+---
+
+# Tradeoffs
+
+Decide in this order. [Tradeoffs](https://pythonidaer.github.io/naming-things/chapters/11-tradeoffs/)
+
+1. **Consistency over the others.** Two names for one concept break understanding (no single mapping), conciseness (one of the names is the longer one), and distinguishability (similar names, or one name for two concepts). A consistent weak name can be renamed later. An inconsistent “better” name spreads the split. [§11.2](https://pythonidaer.github.io/naming-things/chapters/11-tradeoffs/#section-11-2)
+2. **Distinguishability over a shorter ambiguous name.** `email` is shorter than `email_address`, and worse when `email` also means the message. Same pattern for `name` / `full_name` and `phone` / `phone_number`. [§11.3](https://pythonidaer.github.io/naming-things/chapters/11-tradeoffs/#section-11-3), [§11.5](https://pythonidaer.github.io/naming-things/chapters/11-tradeoffs/#section-11-5)
+3. **Understandability over conciseness when the short form hides a needed distinction.** If the name is used constantly and the short form is unambiguous, the short form can win on keystrokes and reading time. A one-off next to other time windows should stay specific: `users_deactivated_in_last_10_days`, not `users_deactivated_recently`, when 30-day windows also exist. [§11.3](https://pythonidaer.github.io/naming-things/chapters/11-tradeoffs/#section-11-3)
+4. **The popular domain word loses if readers cannot tell its senses apart.** The most common word is not automatically the right identifier. [§11.4](https://pythonidaer.github.io/naming-things/chapters/11-tradeoffs/#section-11-4)
+
+State which principle you kept and which you gave up when you pick between two real candidates.

@@ -1,48 +1,849 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Understandability — Naming Things</title><meta name="description" content="Read Understandability in Naming Things: The Hardest Problem in Software Engineering, second edition, by Tom Benner."><link rel="canonical" href="https://pythonidaer.github.io/naming-things/chapters/6-understandability/"><meta property="og:title" content="Understandability — Naming Things"><meta property="og:description" content="Read Understandability in Naming Things: The Hardest Problem in Software Engineering, second edition, by Tom Benner."><meta property="og:type" content="article"><meta property="og:url" content="https://pythonidaer.github.io/naming-things/chapters/6-understandability/"><meta property="og:image" content="https://pythonidaer.github.io/naming-things/share.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Naming Things. The Hardest Problem in Software Engineering. Tom Benner."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Understandability — Naming Things"><meta name="twitter:description" content="Read Understandability in Naming Things: The Hardest Problem in Software Engineering, second edition, by Tom Benner."><meta name="twitter:image" content="https://pythonidaer.github.io/naming-things/share.png"><meta name="twitter:image:alt" content="Naming Things by Tom Benner"><link rel="icon" href="/naming-things/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/naming-things/reset.css"><link rel="stylesheet" href="/naming-things/styles.css"><link rel="stylesheet" href="/naming-things/navigation.css"><script defer src="/naming-things/navigation.js"></script></head>
-<body><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="header-inner">
-<a class="wordmark" href="/naming-things/">Naming Things</a>
-<button id="nav-toggle" class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-navigation"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
-<nav id="site-navigation" class="nav-links" aria-label="Main navigation"><div class="desktop-links"><a href="/naming-things/">Contents</a><a href="/naming-things/roadmap/">Roadmap</a></div><div class="compact-links"><a class="contents-link" href="/naming-things/">Contents</a><div class="nav-group"><p>Introduction</p><ol><li><a href="/naming-things/chapters/1-purpose-of-this-book/"><span class="chapter-number">1</span><span>Purpose of this book</span></a></li><li><a href="/naming-things/chapters/2-why-is-naming-important/"><span class="chapter-number">2</span><span>Why is naming important?</span></a></li><li><a href="/naming-things/chapters/3-why-is-naming-hard/"><span class="chapter-number">3</span><span>Why is naming hard?</span></a></li><li><a href="/naming-things/chapters/4-scope-of-this-book/"><span class="chapter-number">4</span><span>Scope of this book</span></a></li></ol></div><div class="nav-group"><p>Principles</p><ol><li><a href="/naming-things/chapters/5-overview/"><span class="chapter-number">5</span><span>Overview</span></a></li><li><a href="/naming-things/chapters/6-understandability/" aria-current="page"><span class="chapter-number">6</span><span>Understandability</span></a></li><li><a href="/naming-things/chapters/7-conciseness/"><span class="chapter-number">7</span><span>Conciseness</span></a></li><li><a href="/naming-things/chapters/8-consistency/"><span class="chapter-number">8</span><span>Consistency</span></a></li><li><a href="/naming-things/chapters/9-distinguishability/"><span class="chapter-number">9</span><span>Distinguishability</span></a></li></ol></div><div class="nav-group"><p>Application</p><ol><li><a href="/naming-things/chapters/10-overview/"><span class="chapter-number">10</span><span>Overview</span></a></li><li><a href="/naming-things/chapters/11-tradeoffs/"><span class="chapter-number">11</span><span>Tradeoffs</span></a></li><li><a href="/naming-things/chapters/12-identifier-types/"><span class="chapter-number">12</span><span>Identifier types</span></a></li><li><a href="/naming-things/chapters/13-style-guides/"><span class="chapter-number">13</span><span>Style guides</span></a></li><li><a href="/naming-things/chapters/14-controlled-vocabularies/"><span class="chapter-number">14</span><span>Controlled vocabularies</span></a></li><li><a href="/naming-things/chapters/15-renaming/"><span class="chapter-number">15</span><span>Renaming</span></a></li><li><a href="/naming-things/chapters/16-domain-specific-names/"><span class="chapter-number">16</span><span>Domain-specific names</span></a></li><li><a href="/naming-things/chapters/17-developing-naming-skills/"><span class="chapter-number">17</span><span>Developing naming skills</span></a></li></ol></div><div class="nav-group"><p>Appendix</p><ol><li><a href="/naming-things/chapters/18-common-antonyms/"><span class="chapter-number">18</span><span>Common antonyms</span></a></li><li><a href="/naming-things/chapters/19-visually-similar-characters/"><span class="chapter-number">19</span><span>Visually similar characters</span></a></li><li><a href="/naming-things/chapters/20-rejected-principles/"><span class="chapter-number">20</span><span>Rejected principles</span></a></li></ol></div><div class="nav-extra"><a href="/naming-things/acknowledgements/">Acknowledgements</a><a href="/naming-things/references/">References</a><a href="/naming-things/roadmap/">Roadmap</a></div></div></nav></div></header>
-<div class="layout"><aside class="chapter-sidebar"><nav aria-label="Chapters"><a class="contents-link" href="/naming-things/">Contents</a><div class="nav-group"><p>Introduction</p><ol><li><a href="/naming-things/chapters/1-purpose-of-this-book/"><span class="chapter-number">1</span><span>Purpose of this book</span></a></li><li><a href="/naming-things/chapters/2-why-is-naming-important/"><span class="chapter-number">2</span><span>Why is naming important?</span></a></li><li><a href="/naming-things/chapters/3-why-is-naming-hard/"><span class="chapter-number">3</span><span>Why is naming hard?</span></a></li><li><a href="/naming-things/chapters/4-scope-of-this-book/"><span class="chapter-number">4</span><span>Scope of this book</span></a></li></ol></div><div class="nav-group"><p>Principles</p><ol><li><a href="/naming-things/chapters/5-overview/"><span class="chapter-number">5</span><span>Overview</span></a></li><li><a href="/naming-things/chapters/6-understandability/" aria-current="page"><span class="chapter-number">6</span><span>Understandability</span></a></li><li><a href="/naming-things/chapters/7-conciseness/"><span class="chapter-number">7</span><span>Conciseness</span></a></li><li><a href="/naming-things/chapters/8-consistency/"><span class="chapter-number">8</span><span>Consistency</span></a></li><li><a href="/naming-things/chapters/9-distinguishability/"><span class="chapter-number">9</span><span>Distinguishability</span></a></li></ol></div><div class="nav-group"><p>Application</p><ol><li><a href="/naming-things/chapters/10-overview/"><span class="chapter-number">10</span><span>Overview</span></a></li><li><a href="/naming-things/chapters/11-tradeoffs/"><span class="chapter-number">11</span><span>Tradeoffs</span></a></li><li><a href="/naming-things/chapters/12-identifier-types/"><span class="chapter-number">12</span><span>Identifier types</span></a></li><li><a href="/naming-things/chapters/13-style-guides/"><span class="chapter-number">13</span><span>Style guides</span></a></li><li><a href="/naming-things/chapters/14-controlled-vocabularies/"><span class="chapter-number">14</span><span>Controlled vocabularies</span></a></li><li><a href="/naming-things/chapters/15-renaming/"><span class="chapter-number">15</span><span>Renaming</span></a></li><li><a href="/naming-things/chapters/16-domain-specific-names/"><span class="chapter-number">16</span><span>Domain-specific names</span></a></li><li><a href="/naming-things/chapters/17-developing-naming-skills/"><span class="chapter-number">17</span><span>Developing naming skills</span></a></li></ol></div><div class="nav-group"><p>Appendix</p><ol><li><a href="/naming-things/chapters/18-common-antonyms/"><span class="chapter-number">18</span><span>Common antonyms</span></a></li><li><a href="/naming-things/chapters/19-visually-similar-characters/"><span class="chapter-number">19</span><span>Visually similar characters</span></a></li><li><a href="/naming-things/chapters/20-rejected-principles/"><span class="chapter-number">20</span><span>Rejected principles</span></a></li></ol></div><div class="nav-extra"><a href="/naming-things/acknowledgements/">Acknowledgements</a><a href="/naming-things/references/">References</a><a href="/naming-things/roadmap/">Roadmap</a></div></nav></aside><main id="main" tabindex="-1"><p class="eyebrow">Principles / Chapter 6</p><h1>Understandability</h1><article class="prose"><p><em>What is above all needed is to let the meaning choose</em> <em>the word, and not the other way around. In prose, the</em> <em>worst thing you can do with words is to surrender to</em> <em>them.</em></p><p><em>— George Orwell</em></p><h2 id="section-6-1">6.1. Overview</h2><p>A name should help the reader understand the concept that it represents as efficiently as possible. An understandable name has high comprehension (it can be understood quickly) and high recall (it can be remembered easily). For it to have both of these qualities, it must accurately describe the concept that it represents.</p><p>For example, if a variable that represents a bicycle is named “b”, then it is virtually incomprehensible without additional context. It is also difficult to remember that “b” corresponds to a bicycle. If it has a vague name like “item” or an incorrect name like “scooter”, then its comprehension and its recall will still be very low.</p><p>For a name to be understandable, the name must accurately describe the concept using memorable terminology, or it will be difficult to comprehend and recall. If the reader is familiar with the concept, the name should be familiar to them, and if the reader is unfamiliar with the concept, then the concept’s name should teach them the correct terminology for the concept within the domain.</p><h2 id="section-6-2">6.2. Rules</h2><h3 id="section-6-2-1">6.2.1. Describe the concept</h3><p>For a name to be understandable to the reader, it must describe the concept that it represents. If it describes a bicycle, it should be named <code>bicycle</code> and not be irrelevant, vague, or inaccurate.</p><pre><code># Bad
-foo, thing, scooter</code></pre><pre><code># Good
-bicycle</code></pre><h3 id="section-6-2-2">6.2.2. Use dictionary terms</h3><p>Names should use common terms that can be found in dictionaries, as these terms have better comprehension and recall than invented terms with which the reader will not already be familiar.</p><pre><code># Bad
-o, org, people_group</code></pre><pre><code># Good
-organization</code></pre><h3 id="section-6-2-3">6.2.3. Use problem-domain terms</h3><p>The “problem domain” contains the information that defines a problem (e.g., requirements, goals, etc), while the “solution domain” contains the aspects of the problem’s solution(s) (e.g., the solution’s design and implementation). [16] Problem domains are more stable and more fundamental than solution domains, so problem domain terminology should be preferred over solution domain terminology.</p><p>Let’s say you’re writing logic to optimize the scheduling of group meetings for businesses. If you use a scheduling algorithm that takes “events” as inputs, should you use the name “event” or “meeting?” Since “meeting” is the term that’s used in the problem domain, “meeting” is more understandable to more people. It makes the intent clear more quickly than a term that isn’t used in the problem domain.</p><pre><code># Bad
-schedule_events(events)</code></pre><pre><code># Good
-schedule_meetings(meetings)</code></pre><p>Finding the best problem-domain term for a given concept is a large topic will multiple strategies. For more information, see Domain-specific names.</p><h3 id="section-6-2-4">6.2.4. Use standard terms for domain-agnostic concepts</h3><p>Some concepts within a codebase are domain-agnostic because they are universal concepts (e.g., time, physical distance) or domain-agnostic technical concepts (e.g., concepts related to networking, operating systems, or databases). Given the universality of these, standardized terminology for them typically exists, and this terminology should be used.</p><p>For example, when deleting a row in a relational database, “delete” and “row” should be used instead of non-standard terms like “remove” and “record”.</p><pre><code># Bad
-Database.remove_record(table, primary_key)</code></pre><pre><code># Good
-Database.delete_row(table, primary_key)</code></pre><p>Similarly, when sending a kill signal to a unix process, “kill” and “pid” should be used instead of “stop” and “process ID”.</p><pre><code># Bad
-Process.stop(process_id, signal_name)</code></pre><pre><code># Good
-Process.kill(pid, signal_name)</code></pre><h3 id="section-6-2-5">6.2.5. Use correct pluralization</h3><p>If an identifier corresponds to or operates on a single entity, its name should be singular, not plural.</p><pre><code># Bad
-users = User.where(id=user_id)[0]</code></pre><pre><code># Good
-user = User.where(id=user_id)[0]</code></pre><p>If an identifier corresponds to or operates on a collection, its name should be plural, not singular.</p><pre><code># Bad
-user = User.where(state=&#x27;valid&#x27;)</code></pre><pre><code># Good
-users = User.where(state=&#x27;valid&#x27;)</code></pre><pre><code># Bad
-validate_user(users)</code></pre><pre><code># Good
-validate_users(users)</code></pre><h3 id="section-6-2-6">6.2.6. Use accurate parts of speech</h3><p>Each concept corresponds to a part of speech (e.g., a noun, a verb, an adjective), and its name should be that part of speech. While there are some exceptions, identifier types should typically be named using the following parts of speech:</p><div class="table-scroll"><table><thead><tr><th scope="col">Identifier type</th><th scope="col">Parts of speech</th><th scope="col">Examples</th></tr></thead><tbody><tr><td>Classes</td><td>Nouns or noun phrases</td><td>User, PaymentMethod</td></tr><tr><td>Variables</td><td>Nouns, noun phrases, or linking verb and subject complement</td><td>name, birth_date, is_valid</td></tr><tr><td>Methods</td><td>Verbs, verb phrases, or linking verb and subject complement</td><td>validate, delete_all, is_valid</td></tr><tr><td>Interfaces</td><td>Nouns, noun phrases, or adjectives</td><td>Parser, DataInput, Runnable</td></tr></tbody></table></div><p>For example, if there’s a method on a <code>User</code> class that validates a user record, it should be named “validate” instead of “validation”.</p><pre><code># Bad
-user.validation()</code></pre><pre><code># Good
-user.validate()</code></pre><p>If a method returns a boolean, like whether a user is valid, it should be a linking verb (e.g., “is”) and a subject complement (e.g., “valid”) or (if the language community encourages it) an adjective with a question mark.</p><pre><code># Bad
-user.validate()</code></pre><pre><code># Good
-user.is_valid(), user.valid?()</code></pre><h3 id="section-6-2-7">6.2.7. Include units in measurements</h3><p>When naming identifiers that represent measurements (e.g., a distance, an amount of time), the units of the measurement should always be included. Most measurements are meaningless without units. While units can sometimes be assumed, the costs of omitting them usually outweigh the costs of including them.</p><pre><code># Bad
-elapsed_duration</code></pre><pre><code># Good
-elapsed_duration_in_days</code></pre><pre><code># Bad
-remaining_distance</code></pre><pre><code># Good
-remaining_distance_in_meters</code></pre><pre><code># Bad
-temperature</code></pre><pre><code># Good
-temperature_in_celsius</code></pre><p>There are some cases in which it is reasonable to omit units. For example, if time measurements are used very frequently within a codebase and are consistently in seconds, or if the currency values within a codebase will always only be a single currency (e.g., USD, EUR), then the units will be clear enough that they can be assumed and omitted.</p><h3 id="section-6-2-8">6.2.8. Avoid unconventional single-letter names</h3><p>Single-letter variable names are relatively common: they may account for 10-20% of all variable names. [17] Conventions around their usage vary significantly by language, and some conventions encouraging their use are so strong that breaking them can be counterproductive. Kernighan and Pike write that “Local variables used in conventional ways can have very short names. The use of i and j for loop indices, p and q for pointers, and s and t for strings is so frequent that there is little profit and perhaps some loss in longer names”. [4]</p><p>When is it appropriate to use a single-letter name? If there’s a pervasive convention within the language around a specific letter and its meaning (e.g., <code>i</code> and <code>j</code> as loop indices), it will be understandable to most readers. Otherwise, use a name with full words. Multiple studies have shown that these improve both comprehension and recall among all of the demographics of engineers studied. [18, 19]</p><pre><code># Bad
-u = users[0]</code></pre><pre><code># Good
-user = users[0]</code></pre><p>A secondary motivation for full words is that some single- letter names can also be mistaken for other characters; the lowercase letter “l” can be mistaken for the number “1”, and the lowercase letter “o” may be mistaken for the number “0”.</p><pre><code># Bad</code></pre><pre><code>l = users.length
-row_count = l + 1</code></pre><pre><code># Good</code></pre><pre><code>user_count = users.length
-row_count = user_count + 1</code></pre><p>When a variable has a relatively small scope (e.g., if it is only used on a single line), its comprehension and recall won’t be as negatively impacted as in a larger scope, as the reader can easily see all of its context at once. However, a full-word name will typically still be more understandable in this case, unless it’s long enough to significantly decrease legibility.</p><p>If additional logic is added within a single-letter name’s scope, though, it will become harder and harder to see all of the name’s scope at once. Finding the usage of a particular name (e.g., <code>user</code>) throughout a codebase can also be significantly harder or impossible when single- character names (e.g., <code>u</code>) are used.</p><pre><code># Bad</code></pre><pre><code>for u in users:
-  print(u.name)</code></pre><pre><code># Good</code></pre><pre><code>for user in users:
-  print(user.full_name)</code></pre><h3 id="section-6-2-9">6.2.9. Avoid abbreviations</h3><p>Abbreviations, including truncations (e.g., “org” for “organization”) and acronyms (e.g., “AP” for “accounts payable”), are less likely to be understandable than the full name, so their usage should be kept to a minimum. Widely- known abbreviations, like “URL”, “DNS”, and “ID”, are exceptions, as they don’t suffer the same downsides as lesser-known abbreviations.</p><p>For example, if “AP” is used to abbreviate “accounts payable”, a reader who is unfamiliar with the “AP” abbreviation will not understand what it means. Because it is a two-letter name, it may also be difficult to search for it in the codebase or in documentation.</p><p>Abbreviations are sometimes accompanied by inconsistency, as both the abbreviation and the full name are used to refer to a single concept. See Avoid abbreviations for additional discussion.</p><p>In some cases, the full name for a concept is so long that frequent use of it can become cumbersome, and an abbreviation may be worthwhile. When considering this option, consider its effect on conciseness, understandability, and consistency.</p><pre><code># Bad
-ap, acts_payable</code></pre><pre><code># Good
-accounts_payable</code></pre><pre><code># Bad
-org</code></pre><pre><code># Good
-organization</code></pre><h3 id="section-6-2-10">6.2.10. Avoid non-standard symbolic names</h3><p>Some languages support the use of symbolic names (e.g., a Scala function or a Ruby method could be named “&lt;&lt;– &gt;&gt;”). Some symbolic names (e.g., “+”, “-”, “==”) are so universal that they are understandable to the vast majority of software engineers, but there are many that are not. Symbolic names that aren’t universally acceptable are not immediately comprehensible. It’s difficult to search for them in a codebase, difficult to search the web to discover their meaning, difficult to pronounce them, and their meaning is difficult to remember. Similar to single-letter names, their brevity may be attractive to some engineers, but their lack of understandability typically outweighs this benefit.</p><p>For example, if you’re naming a Ruby method that invokes a function on every element within a collection, it should be named <code>map</code> instead of having a symbolic name.</p><pre><code># Bad
-def -&gt;(&amp;block)</code></pre><pre><code># Good
-def map(&amp;block)</code></pre><h3 id="section-6-2-11">6.2.11. Avoid cleverness</h3><p>It can be tempting to inject humor or cleverness into what may otherwise be fairly boring code. This may be enjoyable in the short term, but its negative impact on understandability will outweigh its brief pleasure.</p><p>For example, if you’re writing a method that removes bullets from text, you may consider using a more clever name about stopping bullets, like <code>apply_kevlar(text)</code>. Anyone else who reads this name will have to pause to consider its meaning, and in the worse case, they won’t understand its meaning at all. You’re adding more cognitive load to them, both for their initial encounter with it and for future encounters.</p><p>Cleverness also often reduces consistency: if someone is trying to find all of the methods that remove something from text, they may search for “remove” and will not find a method named <code>apply_kevlar(text)</code>.</p><pre><code># Bad
-apply_kevlar(text)</code></pre><pre><code># Good
-remove_bullets(text)</code></pre><h3 id="section-6-2-12">6.2.12. Avoid usage of temporary or irrelevant concepts</h3><p>Similar to names that use cleverness, names that rely on temporary or irrelevant concepts are less understandable and less consistent.</p><p>For example, if you’re naming a method that kills a large number of processes, you might decide to pay homage to your favorite Metallica album and name it <code>kill_em_all</code>. Despite your belief in Metallica’s pervasiveness, many people will not understand this reference, be confused by the odd naming choice, and have trouble remembering the name. A name like <code>kill_processes</code> will be more understandable and more timeless.</p><pre><code># Bad
-kill_em_all(processes)</code></pre><pre><code># Good
-kill_processes(processes)</code></pre><h3 id="section-6-2-13">6.2.13. Consider the audience’s familiarity with the name</h3><p>Understandability is dependent on the audience that is interacting with the name. If a music application measures how positive or negative a song feels, this quality could be named either “valence” or “positivity.” These are roughly synonyms, but “valence” is an industry term while “positivity” is known both inside and outside of the industry.</p><p>If the audience interacting with the name will be almost exclusively people who are already familiar with the term “valence”, then it would make sense to use that industry- specific term, as it carries slightly more meaning than “positivity.”</p><p>If the audience was unfamiliar with the term “valence”, then every time “valence” was read by or discussed with someone new, that person would need to take the time to find out what it means and would need to be able to remember its definition. In some cases this can be beneficial: it can teach the audience more about the industry, and if it has a more meaningful definition than “positivity”, then that meaning may be beneficial.</p><p>There are tradeoffs between choosing a name that the audience will immediately understand and one that has educational value, and it’s important to be intentional about weighing the benefits described above when making a choice like this.</p></article><nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/naming-things/chapters/5-overview/"><span>Previous chapter</span>Overview</a><a href="/naming-things/chapters/7-conciseness/"><span>Next chapter</span>Conciseness</a></nav><footer class="site-footer"><p>Tom Benner · Second edition, 2023</p><p>Copyright © 2023 Tom Benner. All rights reserved.</p></footer></main><aside class="page-toc" aria-label="On this page"><p>On this page</p><a class="depth-2" href="#section-6-1">6.1. Overview</a><a class="depth-2" href="#section-6-2">6.2. Rules</a><a class="depth-3" href="#section-6-2-1">6.2.1. Describe the concept</a><a class="depth-3" href="#section-6-2-2">6.2.2. Use dictionary terms</a><a class="depth-3" href="#section-6-2-3">6.2.3. Use problem-domain terms</a><a class="depth-3" href="#section-6-2-4">6.2.4. Use standard terms for domain-agnostic concepts</a><a class="depth-3" href="#section-6-2-5">6.2.5. Use correct pluralization</a><a class="depth-3" href="#section-6-2-6">6.2.6. Use accurate parts of speech</a><a class="depth-3" href="#section-6-2-7">6.2.7. Include units in measurements</a><a class="depth-3" href="#section-6-2-8">6.2.8. Avoid unconventional single-letter names</a><a class="depth-3" href="#section-6-2-9">6.2.9. Avoid abbreviations</a><a class="depth-3" href="#section-6-2-10">6.2.10. Avoid non-standard symbolic names</a><a class="depth-3" href="#section-6-2-11">6.2.11. Avoid cleverness</a><a class="depth-3" href="#section-6-2-12">6.2.12. Avoid usage of temporary or irrelevant concepts</a><a class="depth-3" href="#section-6-2-13">6.2.13. Consider the audience’s familiarity with the name</a></aside></div></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Understandability — Naming Things</title>
+    <meta
+      name="description"
+      content="Read Understandability in Naming Things: The Hardest Problem in Software Engineering, second edition, by Tom Benner."
+    />
+    <link
+      rel="canonical"
+      href="https://pythonidaer.github.io/naming-things/chapters/6-understandability/"
+    />
+    <meta property="og:title" content="Understandability — Naming Things" />
+    <meta
+      property="og:description"
+      content="Read Understandability in Naming Things: The Hardest Problem in Software Engineering, second edition, by Tom Benner."
+    />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:url"
+      content="https://pythonidaer.github.io/naming-things/chapters/6-understandability/"
+    />
+    <meta
+      property="og:image"
+      content="https://pythonidaer.github.io/naming-things/share.png"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Naming Things. The Hardest Problem in Software Engineering. Tom Benner."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Understandability — Naming Things" />
+    <meta
+      name="twitter:description"
+      content="Read Understandability in Naming Things: The Hardest Problem in Software Engineering, second edition, by Tom Benner."
+    />
+    <meta
+      name="twitter:image"
+      content="https://pythonidaer.github.io/naming-things/share.png"
+    />
+    <meta name="twitter:image:alt" content="Naming Things by Tom Benner" />
+    <link rel="icon" href="/naming-things/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/naming-things/reset.css" />
+    <link rel="stylesheet" href="/naming-things/styles.css" />
+    <link rel="stylesheet" href="/naming-things/navigation.css" />
+    <script defer src="/naming-things/navigation.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="wordmark" href="/naming-things/">Naming Things</a>
+        <button
+          id="nav-toggle"
+          class="nav-toggle"
+          type="button"
+          aria-label="Open navigation"
+          aria-expanded="false"
+          aria-controls="site-navigation"
+        >
+          <span aria-hidden="true"></span><span aria-hidden="true"></span
+          ><span aria-hidden="true"></span>
+        </button>
+        <nav
+          id="site-navigation"
+          class="nav-links"
+          aria-label="Main navigation"
+        >
+          <div class="desktop-links">
+            <a href="/naming-things/">Contents</a
+            ><a href="/naming-things/roadmap/">Roadmap</a>
+          </div>
+          <div class="compact-links">
+            <a class="contents-link" href="/naming-things/">Contents</a>
+            <div class="nav-group">
+              <p>Introduction</p>
+              <ol>
+                <li>
+                  <a href="/naming-things/chapters/1-purpose-of-this-book/"
+                    ><span class="chapter-number">1</span
+                    ><span>Purpose of this book</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/2-why-is-naming-important/"
+                    ><span class="chapter-number">2</span
+                    ><span>Why is naming important?</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/3-why-is-naming-hard/"
+                    ><span class="chapter-number">3</span
+                    ><span>Why is naming hard?</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/4-scope-of-this-book/"
+                    ><span class="chapter-number">4</span
+                    ><span>Scope of this book</span></a
+                  >
+                </li>
+              </ol>
+            </div>
+            <div class="nav-group">
+              <p>Principles</p>
+              <ol>
+                <li>
+                  <a href="/naming-things/chapters/5-overview/"
+                    ><span class="chapter-number">5</span
+                    ><span>Overview</span></a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/naming-things/chapters/6-understandability/"
+                    aria-current="page"
+                    ><span class="chapter-number">6</span
+                    ><span>Understandability</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/7-conciseness/"
+                    ><span class="chapter-number">7</span
+                    ><span>Conciseness</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/8-consistency/"
+                    ><span class="chapter-number">8</span
+                    ><span>Consistency</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/9-distinguishability/"
+                    ><span class="chapter-number">9</span
+                    ><span>Distinguishability</span></a
+                  >
+                </li>
+              </ol>
+            </div>
+            <div class="nav-group">
+              <p>Application</p>
+              <ol>
+                <li>
+                  <a href="/naming-things/chapters/10-overview/"
+                    ><span class="chapter-number">10</span
+                    ><span>Overview</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/11-tradeoffs/"
+                    ><span class="chapter-number">11</span
+                    ><span>Tradeoffs</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/12-identifier-types/"
+                    ><span class="chapter-number">12</span
+                    ><span>Identifier types</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/13-style-guides/"
+                    ><span class="chapter-number">13</span
+                    ><span>Style guides</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/14-controlled-vocabularies/"
+                    ><span class="chapter-number">14</span
+                    ><span>Controlled vocabularies</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/15-renaming/"
+                    ><span class="chapter-number">15</span
+                    ><span>Renaming</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/16-domain-specific-names/"
+                    ><span class="chapter-number">16</span
+                    ><span>Domain-specific names</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/17-developing-naming-skills/"
+                    ><span class="chapter-number">17</span
+                    ><span>Developing naming skills</span></a
+                  >
+                </li>
+              </ol>
+            </div>
+            <div class="nav-group">
+              <p>Appendix</p>
+              <ol>
+                <li>
+                  <a href="/naming-things/chapters/18-common-antonyms/"
+                    ><span class="chapter-number">18</span
+                    ><span>Common antonyms</span></a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/naming-things/chapters/19-visually-similar-characters/"
+                    ><span class="chapter-number">19</span
+                    ><span>Visually similar characters</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/20-rejected-principles/"
+                    ><span class="chapter-number">20</span
+                    ><span>Rejected principles</span></a
+                  >
+                </li>
+              </ol>
+            </div>
+            <div class="nav-extra">
+              <a href="/naming-things/acknowledgements/">Acknowledgements</a
+              ><a href="/naming-things/references/">References</a
+              ><a href="/naming-things/roadmap/">Roadmap</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <div class="layout">
+      <aside class="chapter-sidebar">
+        <nav aria-label="Chapters">
+          <a class="contents-link" href="/naming-things/">Contents</a>
+          <div class="nav-group">
+            <p>Introduction</p>
+            <ol>
+              <li>
+                <a href="/naming-things/chapters/1-purpose-of-this-book/"
+                  ><span class="chapter-number">1</span
+                  ><span>Purpose of this book</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/2-why-is-naming-important/"
+                  ><span class="chapter-number">2</span
+                  ><span>Why is naming important?</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/3-why-is-naming-hard/"
+                  ><span class="chapter-number">3</span
+                  ><span>Why is naming hard?</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/4-scope-of-this-book/"
+                  ><span class="chapter-number">4</span
+                  ><span>Scope of this book</span></a
+                >
+              </li>
+            </ol>
+          </div>
+          <div class="nav-group">
+            <p>Principles</p>
+            <ol>
+              <li>
+                <a href="/naming-things/chapters/5-overview/"
+                  ><span class="chapter-number">5</span><span>Overview</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="/naming-things/chapters/6-understandability/"
+                  aria-current="page"
+                  ><span class="chapter-number">6</span
+                  ><span>Understandability</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/7-conciseness/"
+                  ><span class="chapter-number">7</span
+                  ><span>Conciseness</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/8-consistency/"
+                  ><span class="chapter-number">8</span
+                  ><span>Consistency</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/9-distinguishability/"
+                  ><span class="chapter-number">9</span
+                  ><span>Distinguishability</span></a
+                >
+              </li>
+            </ol>
+          </div>
+          <div class="nav-group">
+            <p>Application</p>
+            <ol>
+              <li>
+                <a href="/naming-things/chapters/10-overview/"
+                  ><span class="chapter-number">10</span
+                  ><span>Overview</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/11-tradeoffs/"
+                  ><span class="chapter-number">11</span
+                  ><span>Tradeoffs</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/12-identifier-types/"
+                  ><span class="chapter-number">12</span
+                  ><span>Identifier types</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/13-style-guides/"
+                  ><span class="chapter-number">13</span
+                  ><span>Style guides</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/14-controlled-vocabularies/"
+                  ><span class="chapter-number">14</span
+                  ><span>Controlled vocabularies</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/15-renaming/"
+                  ><span class="chapter-number">15</span
+                  ><span>Renaming</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/16-domain-specific-names/"
+                  ><span class="chapter-number">16</span
+                  ><span>Domain-specific names</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/17-developing-naming-skills/"
+                  ><span class="chapter-number">17</span
+                  ><span>Developing naming skills</span></a
+                >
+              </li>
+            </ol>
+          </div>
+          <div class="nav-group">
+            <p>Appendix</p>
+            <ol>
+              <li>
+                <a href="/naming-things/chapters/18-common-antonyms/"
+                  ><span class="chapter-number">18</span
+                  ><span>Common antonyms</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="/naming-things/chapters/19-visually-similar-characters/"
+                  ><span class="chapter-number">19</span
+                  ><span>Visually similar characters</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/20-rejected-principles/"
+                  ><span class="chapter-number">20</span
+                  ><span>Rejected principles</span></a
+                >
+              </li>
+            </ol>
+          </div>
+          <div class="nav-extra">
+            <a href="/naming-things/acknowledgements/">Acknowledgements</a
+            ><a href="/naming-things/references/">References</a
+            ><a href="/naming-things/roadmap/">Roadmap</a>
+          </div>
+        </nav>
+      </aside>
+      <main id="main" tabindex="-1">
+        <p class="eyebrow">Principles / Chapter 6</p>
+        <h1>Understandability</h1>
+        <article class="prose">
+          <p>
+            <em>What is above all needed is to let the meaning choose</em>
+            <em>the word, and not the other way around. In prose, the</em>
+            <em>worst thing you can do with words is to surrender to</em>
+            <em>them.</em>
+          </p>
+          <p><em>— George Orwell</em></p>
+          <h2 id="section-6-1">6.1. Overview</h2>
+          <p>
+            A name should help the reader understand the concept that it
+            represents as efficiently as possible. An understandable name has
+            high comprehension (it can be understood quickly) and high recall
+            (it can be remembered easily). For it to have both of these
+            qualities, it must accurately describe the concept that it
+            represents.
+          </p>
+          <p>
+            For example, if a variable that represents a bicycle is named “b”,
+            then it is virtually incomprehensible without additional context. It
+            is also difficult to remember that “b” corresponds to a bicycle. If
+            it has a vague name like “item” or an incorrect name like “scooter”,
+            then its comprehension and its recall will still be very low.
+          </p>
+          <p>
+            For a name to be understandable, the name must accurately describe
+            the concept using memorable terminology, or it will be difficult to
+            comprehend and recall. If the reader is familiar with the concept,
+            the name should be familiar to them, and if the reader is unfamiliar
+            with the concept, then the concept’s name should teach them the
+            correct terminology for the concept within the domain.
+          </p>
+          <h2 id="section-6-2">6.2. Rules</h2>
+          <h3 id="section-6-2-1">6.2.1. Describe the concept</h3>
+          <p>
+            For a name to be understandable to the reader, it must describe the
+            concept that it represents. If it describes a bicycle, it should be
+            named <code>bicycle</code> and not be irrelevant, vague, or
+            inaccurate.
+          </p>
+          <pre><code># Bad
+foo, thing, scooter</code></pre>
+          <pre><code># Good
+bicycle</code></pre>
+          <h3 id="section-6-2-2">6.2.2. Use dictionary terms</h3>
+          <p>
+            Names should use common terms that can be found in dictionaries, as
+            these terms have better comprehension and recall than invented terms
+            with which the reader will not already be familiar.
+          </p>
+          <pre><code># Bad
+o, org, people_group</code></pre>
+          <pre><code># Good
+organization</code></pre>
+          <h3 id="section-6-2-3">6.2.3. Use problem-domain terms</h3>
+          <p>
+            The “problem domain” contains the information that defines a problem
+            (e.g., requirements, goals, etc), while the “solution domain”
+            contains the aspects of the problem’s solution(s) (e.g., the
+            solution’s design and implementation). [16] Problem domains are more
+            stable and more fundamental than solution domains, so problem domain
+            terminology should be preferred over solution domain terminology.
+          </p>
+          <p>
+            Let’s say you’re writing logic to optimize the scheduling of group
+            meetings for businesses. If you use a scheduling algorithm that
+            takes “events” as inputs, should you use the name “event” or
+            “meeting?” Since “meeting” is the term that’s used in the problem
+            domain, “meeting” is more understandable to more people. It makes
+            the intent clear more quickly than a term that isn’t used in the
+            problem domain.
+          </p>
+          <pre><code># Bad
+schedule_events(events)</code></pre>
+          <pre><code># Good
+schedule_meetings(meetings)</code></pre>
+          <p>
+            Finding the best problem-domain term for a given concept is a large
+            topic will multiple strategies. For more information, see
+            Domain-specific names.
+          </p>
+          <h3 id="section-6-2-4">
+            6.2.4. Use standard terms for domain-agnostic concepts
+          </h3>
+          <p>
+            Some concepts within a codebase are domain-agnostic because they are
+            universal concepts (e.g., time, physical distance) or
+            domain-agnostic technical concepts (e.g., concepts related to
+            networking, operating systems, or databases). Given the universality
+            of these, standardized terminology for them typically exists, and
+            this terminology should be used.
+          </p>
+          <p>
+            For example, when deleting a row in a relational database, “delete”
+            and “row” should be used instead of non-standard terms like “remove”
+            and “record”.
+          </p>
+          <pre><code># Bad
+Database.remove_record(table, primary_key)</code></pre>
+          <pre><code># Good
+Database.delete_row(table, primary_key)</code></pre>
+          <p>
+            Similarly, when sending a kill signal to a unix process, “kill” and
+            “pid” should be used instead of “stop” and “process ID”.
+          </p>
+          <pre><code># Bad
+Process.stop(process_id, signal_name)</code></pre>
+          <pre><code># Good
+Process.kill(pid, signal_name)</code></pre>
+          <h3 id="section-6-2-5">6.2.5. Use correct pluralization</h3>
+          <p>
+            If an identifier corresponds to or operates on a single entity, its
+            name should be singular, not plural.
+          </p>
+          <pre><code># Bad
+users = User.where(id=user_id)[0]</code></pre>
+          <pre><code># Good
+user = User.where(id=user_id)[0]</code></pre>
+          <p>
+            If an identifier corresponds to or operates on a collection, its
+            name should be plural, not singular.
+          </p>
+          <pre><code># Bad
+user = User.where(state=&#x27;valid&#x27;)</code></pre>
+          <pre><code># Good
+users = User.where(state=&#x27;valid&#x27;)</code></pre>
+          <pre><code># Bad
+validate_user(users)</code></pre>
+          <pre><code># Good
+validate_users(users)</code></pre>
+          <h3 id="section-6-2-6">6.2.6. Use accurate parts of speech</h3>
+          <p>
+            Each concept corresponds to a part of speech (e.g., a noun, a verb,
+            an adjective), and its name should be that part of speech. While
+            there are some exceptions, identifier types should typically be
+            named using the following parts of speech:
+          </p>
+          <div class="table-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Identifier type</th>
+                  <th scope="col">Parts of speech</th>
+                  <th scope="col">Examples</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Classes</td>
+                  <td>Nouns or noun phrases</td>
+                  <td>User, PaymentMethod</td>
+                </tr>
+                <tr>
+                  <td>Variables</td>
+                  <td>
+                    Nouns, noun phrases, or linking verb and subject complement
+                  </td>
+                  <td>name, birth_date, is_valid</td>
+                </tr>
+                <tr>
+                  <td>Methods</td>
+                  <td>
+                    Verbs, verb phrases, or linking verb and subject complement
+                  </td>
+                  <td>validate, delete_all, is_valid</td>
+                </tr>
+                <tr>
+                  <td>Interfaces</td>
+                  <td>Nouns, noun phrases, or adjectives</td>
+                  <td>Parser, DataInput, Runnable</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>
+            For example, if there’s a method on a <code>User</code> class that
+            validates a user record, it should be named “validate” instead of
+            “validation”.
+          </p>
+          <pre><code># Bad
+user.validation()</code></pre>
+          <pre><code># Good
+user.validate()</code></pre>
+          <p>
+            If a method returns a boolean, like whether a user is valid, it
+            should be a linking verb (e.g., “is”) and a subject complement
+            (e.g., “valid”) or (if the language community encourages it) an
+            adjective with a question mark.
+          </p>
+          <pre><code># Bad
+user.validate()</code></pre>
+          <pre><code># Good
+user.is_valid(), user.valid?()</code></pre>
+          <h3 id="section-6-2-7">6.2.7. Include units in measurements</h3>
+          <p>
+            When naming identifiers that represent measurements (e.g., a
+            distance, an amount of time), the units of the measurement should
+            always be included. Most measurements are meaningless without units.
+            While units can sometimes be assumed, the costs of omitting them
+            usually outweigh the costs of including them.
+          </p>
+          <pre><code># Bad
+elapsed_duration</code></pre>
+          <pre><code># Good
+elapsed_duration_in_days</code></pre>
+          <pre><code># Bad
+remaining_distance</code></pre>
+          <pre><code># Good
+remaining_distance_in_meters</code></pre>
+          <pre><code># Bad
+temperature</code></pre>
+          <pre><code># Good
+temperature_in_celsius</code></pre>
+          <p>
+            There are some cases in which it is reasonable to omit units. For
+            example, if time measurements are used very frequently within a
+            codebase and are consistently in seconds, or if the currency values
+            within a codebase will always only be a single currency (e.g., USD,
+            EUR), then the units will be clear enough that they can be assumed
+            and omitted.
+          </p>
+          <h3 id="section-6-2-8">
+            6.2.8. Avoid unconventional single-letter names
+          </h3>
+          <p>
+            Single-letter variable names are relatively common: they may account
+            for 10-20% of all variable names. [17] Conventions around their
+            usage vary significantly by language, and some conventions
+            encouraging their use are so strong that breaking them can be
+            counterproductive. Kernighan and Pike write that “Local variables
+            used in conventional ways can have very short names. The use of i
+            and j for loop indices, p and q for pointers, and s and t for
+            strings is so frequent that there is little profit and perhaps some
+            loss in longer names”. [4]
+          </p>
+          <p>
+            When is it appropriate to use a single-letter name? If there’s a
+            pervasive convention within the language around a specific letter
+            and its meaning (e.g., <code>i</code> and <code>j</code> as loop
+            indices), it will be understandable to most readers. Otherwise, use
+            a name with full words. Multiple studies have shown that these
+            improve both comprehension and recall among all of the demographics
+            of engineers studied. [18, 19]
+          </p>
+          <pre><code># Bad
+u = users[0]</code></pre>
+          <pre><code># Good
+user = users[0]</code></pre>
+          <p>
+            A secondary motivation for full words is that some single- letter
+            names can also be mistaken for other characters; the lowercase
+            letter “l” can be mistaken for the number “1”, and the lowercase
+            letter “o” may be mistaken for the number “0”.
+          </p>
+          <pre><code># Bad</code></pre>
+          <pre><code>l = users.length
+row_count = l + 1</code></pre>
+          <pre><code># Good</code></pre>
+          <pre><code>user_count = users.length
+row_count = user_count + 1</code></pre>
+          <p>
+            When a variable has a relatively small scope (e.g., if it is only
+            used on a single line), its comprehension and recall won’t be as
+            negatively impacted as in a larger scope, as the reader can easily
+            see all of its context at once. However, a full-word name will
+            typically still be more understandable in this case, unless it’s
+            long enough to significantly decrease legibility.
+          </p>
+          <p>
+            If additional logic is added within a single-letter name’s scope,
+            though, it will become harder and harder to see all of the name’s
+            scope at once. Finding the usage of a particular name (e.g.,
+            <code>user</code>) throughout a codebase can also be significantly
+            harder or impossible when single- character names (e.g.,
+            <code>u</code>) are used.
+          </p>
+          <pre><code># Bad</code></pre>
+          <pre><code>for u in users:
+  print(u.name)</code></pre>
+          <pre><code># Good</code></pre>
+          <pre><code>for user in users:
+  print(user.full_name)</code></pre>
+          <h3 id="section-6-2-9">6.2.9. Avoid abbreviations</h3>
+          <p>
+            Abbreviations, including truncations (e.g., “org” for
+            “organization”) and acronyms (e.g., “AP” for “accounts payable”),
+            are less likely to be understandable than the full name, so their
+            usage should be kept to a minimum. Widely- known abbreviations, like
+            “URL”, “DNS”, and “ID”, are exceptions, as they don’t suffer the
+            same downsides as lesser-known abbreviations.
+          </p>
+          <p>
+            For example, if “AP” is used to abbreviate “accounts payable”, a
+            reader who is unfamiliar with the “AP” abbreviation will not
+            understand what it means. Because it is a two-letter name, it may
+            also be difficult to search for it in the codebase or in
+            documentation.
+          </p>
+          <p>
+            Abbreviations are sometimes accompanied by inconsistency, as both
+            the abbreviation and the full name are used to refer to a single
+            concept. See Avoid abbreviations for additional discussion.
+          </p>
+          <p>
+            In some cases, the full name for a concept is so long that frequent
+            use of it can become cumbersome, and an abbreviation may be
+            worthwhile. When considering this option, consider its effect on
+            conciseness, understandability, and consistency.
+          </p>
+          <pre><code># Bad
+ap, acts_payable</code></pre>
+          <pre><code># Good
+accounts_payable</code></pre>
+          <pre><code># Bad
+org</code></pre>
+          <pre><code># Good
+organization</code></pre>
+          <h3 id="section-6-2-10">6.2.10. Avoid non-standard symbolic names</h3>
+          <p>
+            Some languages support the use of symbolic names (e.g., a Scala
+            function or a Ruby method could be named “&lt;&lt;– &gt;&gt;”). Some
+            symbolic names (e.g., “+”, “-”, “==”) are so universal that they are
+            understandable to the vast majority of software engineers, but there
+            are many that are not. Symbolic names that aren’t universally
+            acceptable are not immediately comprehensible. It’s difficult to
+            search for them in a codebase, difficult to search the web to
+            discover their meaning, difficult to pronounce them, and their
+            meaning is difficult to remember. Similar to single-letter names,
+            their brevity may be attractive to some engineers, but their lack of
+            understandability typically outweighs this benefit.
+          </p>
+          <p>
+            For example, if you’re naming a Ruby method that invokes a function
+            on every element within a collection, it should be named
+            <code>map</code> instead of having a symbolic name.
+          </p>
+          <pre><code># Bad
+def -&gt;(&amp;block)</code></pre>
+          <pre><code># Good
+def map(&amp;block)</code></pre>
+          <h3 id="section-6-2-11">6.2.11. Avoid cleverness</h3>
+          <p>
+            It can be tempting to inject humor or cleverness into what may
+            otherwise be fairly boring code. This may be enjoyable in the short
+            term, but its negative impact on understandability will outweigh its
+            brief pleasure.
+          </p>
+          <p>
+            For example, if you’re writing a method that removes bullets from
+            text, you may consider using a more clever name about stopping
+            bullets, like <code>apply_kevlar(text)</code>. Anyone else who reads
+            this name will have to pause to consider its meaning, and in the
+            worse case, they won’t understand its meaning at all. You’re adding
+            more cognitive load to them, both for their initial encounter with
+            it and for future encounters.
+          </p>
+          <p>
+            Cleverness also often reduces consistency: if someone is trying to
+            find all of the methods that remove something from text, they may
+            search for “remove” and will not find a method named
+            <code>apply_kevlar(text)</code>.
+          </p>
+          <pre><code># Bad
+apply_kevlar(text)</code></pre>
+          <pre><code># Good
+remove_bullets(text)</code></pre>
+          <h3 id="section-6-2-12">
+            6.2.12. Avoid usage of temporary or irrelevant concepts
+          </h3>
+          <p>
+            Similar to names that use cleverness, names that rely on temporary
+            or irrelevant concepts are less understandable and less consistent.
+          </p>
+          <p>
+            For example, if you’re naming a method that kills a large number of
+            processes, you might decide to pay homage to your favorite Metallica
+            album and name it <code>kill_em_all</code>. Despite your belief in
+            Metallica’s pervasiveness, many people will not understand this
+            reference, be confused by the odd naming choice, and have trouble
+            remembering the name. A name like <code>kill_processes</code> will
+            be more understandable and more timeless.
+          </p>
+          <pre><code># Bad
+kill_em_all(processes)</code></pre>
+          <pre><code># Good
+kill_processes(processes)</code></pre>
+          <h3 id="section-6-2-13">
+            6.2.13. Consider the audience’s familiarity with the name
+          </h3>
+          <p>
+            Understandability is dependent on the audience that is interacting
+            with the name. If a music application measures how positive or
+            negative a song feels, this quality could be named either “valence”
+            or “positivity.” These are roughly synonyms, but “valence” is an
+            industry term while “positivity” is known both inside and outside of
+            the industry.
+          </p>
+          <p>
+            If the audience interacting with the name will be almost exclusively
+            people who are already familiar with the term “valence”, then it
+            would make sense to use that industry- specific term, as it carries
+            slightly more meaning than “positivity.”
+          </p>
+          <p>
+            If the audience was unfamiliar with the term “valence”, then every
+            time “valence” was read by or discussed with someone new, that
+            person would need to take the time to find out what it means and
+            would need to be able to remember its definition. In some cases this
+            can be beneficial: it can teach the audience more about the
+            industry, and if it has a more meaningful definition than
+            “positivity”, then that meaning may be beneficial.
+          </p>
+          <p>
+            There are tradeoffs between choosing a name that the audience will
+            immediately understand and one that has educational value, and it’s
+            important to be intentional about weighing the benefits described
+            above when making a choice like this.
+          </p>
+        </article>
+        <nav class="chapter-pagination" aria-label="Chapter navigation">
+          <a href="/naming-things/chapters/5-overview/"
+            ><span>Previous chapter</span>Overview</a
+          ><a href="/naming-things/chapters/7-conciseness/"
+            ><span>Next chapter</span>Conciseness</a
+          >
+        </nav>
+        <footer class="site-footer">
+          <p>Tom Benner · Second edition, 2023</p>
+          <p>Copyright © 2023 Tom Benner. All rights reserved.</p>
+        </footer>
+      </main>
+      <aside class="page-toc" aria-label="On this page">
+        <p>On this page</p>
+        <a class="depth-2" href="#section-6-1">6.1. Overview</a
+        ><a class="depth-2" href="#section-6-2">6.2. Rules</a
+        ><a class="depth-3" href="#section-6-2-1">6.2.1. Describe the concept</a
+        ><a class="depth-3" href="#section-6-2-2">6.2.2. Use dictionary terms</a
+        ><a class="depth-3" href="#section-6-2-3"
+          >6.2.3. Use problem-domain terms</a
+        ><a class="depth-3" href="#section-6-2-4"
+          >6.2.4. Use standard terms for domain-agnostic concepts</a
+        ><a class="depth-3" href="#section-6-2-5"
+          >6.2.5. Use correct pluralization</a
+        ><a class="depth-3" href="#section-6-2-6"
+          >6.2.6. Use accurate parts of speech</a
+        ><a class="depth-3" href="#section-6-2-7"
+          >6.2.7. Include units in measurements</a
+        ><a class="depth-3" href="#section-6-2-8"
+          >6.2.8. Avoid unconventional single-letter names</a
+        ><a class="depth-3" href="#section-6-2-9">6.2.9. Avoid abbreviations</a
+        ><a class="depth-3" href="#section-6-2-10"
+          >6.2.10. Avoid non-standard symbolic names</a
+        ><a class="depth-3" href="#section-6-2-11">6.2.11. Avoid cleverness</a
+        ><a class="depth-3" href="#section-6-2-12"
+          >6.2.12. Avoid usage of temporary or irrelevant concepts</a
+        ><a class="depth-3" href="#section-6-2-13"
+          >6.2.13. Consider the audience’s familiarity with the name</a
+        >
+      </aside>
+    </div>
+  </body>
+</html>

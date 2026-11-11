@@ -1,0 +1,24 @@
+---
+description: Use one name per concept, with similar names and formats for similar concepts. Use when a codebase has synonyms, mixed conventions, or mismatched opposites.
+alwaysApply: false
+---
+
+# Consistency
+
+Each concept has one name. Similar concepts have similar names. Similar names use the same format. [Overview](https://pythonidaer.github.io/naming-things/chapters/8-consistency/)
+
+- Follow the language and framework convention. A local deviation surprises readers and fights tools. [§8.2.1](https://pythonidaer.github.io/naming-things/chapters/8-consistency/#section-8-2-1)
+- Do not give one concept two names. `user` and `end_user` may not both mean the same person. The same fact keeps the same name in every context (`first_name` stays `first_name`). [§8.2.2](https://pythonidaer.github.io/naming-things/chapters/8-consistency/#section-8-2-2)
+- Do not keep both an abbreviation and the full word for one concept. [§8.2.3](https://pythonidaer.github.io/naming-things/chapters/8-consistency/#section-8-2-3)
+- Name similar things with the same shape. If one external reader is `OrderFetcher`, the next is `InvoiceFetcher`, not `LoadInvoice`. Camel-case acronyms one way: `XmlParser` and `HtmlParser`, or `XMLParser` and `HTMLParser`. [§8.2.4](https://pythonidaer.github.io/naming-things/chapters/8-consistency/#section-8-2-4)
+- Use one antonym pair per concept. Prefer the usual pair and a shared root. The project list is `notes/common-antonyms.md`. [§8.2.5](https://pythonidaer.github.io/naming-things/chapters/8-consistency/#section-8-2-5)
+
+```text
+# Weak: two words, two shapes
+connect_socket() / sever_socket()
+user_id vs endUserId
+
+# Stronger
+connect_socket() / disconnect_socket()
+user_id vs user_id
+```

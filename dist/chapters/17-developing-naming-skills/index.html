@@ -1,6 +1,530 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Developing naming skills — Naming Things</title><meta name="description" content="Read Developing naming skills in Naming Things: The Hardest Problem in Software Engineering, second edition, by Tom Benner."><link rel="canonical" href="https://pythonidaer.github.io/naming-things/chapters/17-developing-naming-skills/"><meta property="og:title" content="Developing naming skills — Naming Things"><meta property="og:description" content="Read Developing naming skills in Naming Things: The Hardest Problem in Software Engineering, second edition, by Tom Benner."><meta property="og:type" content="article"><meta property="og:url" content="https://pythonidaer.github.io/naming-things/chapters/17-developing-naming-skills/"><meta property="og:image" content="https://pythonidaer.github.io/naming-things/share.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Naming Things. The Hardest Problem in Software Engineering. Tom Benner."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Developing naming skills — Naming Things"><meta name="twitter:description" content="Read Developing naming skills in Naming Things: The Hardest Problem in Software Engineering, second edition, by Tom Benner."><meta name="twitter:image" content="https://pythonidaer.github.io/naming-things/share.png"><meta name="twitter:image:alt" content="Naming Things by Tom Benner"><link rel="icon" href="/naming-things/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/naming-things/reset.css"><link rel="stylesheet" href="/naming-things/styles.css"><link rel="stylesheet" href="/naming-things/navigation.css"><script defer src="/naming-things/navigation.js"></script></head>
-<body><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="header-inner">
-<a class="wordmark" href="/naming-things/">Naming Things</a>
-<button id="nav-toggle" class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-navigation"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
-<nav id="site-navigation" class="nav-links" aria-label="Main navigation"><div class="desktop-links"><a href="/naming-things/">Contents</a><a href="/naming-things/roadmap/">Roadmap</a></div><div class="compact-links"><a class="contents-link" href="/naming-things/">Contents</a><div class="nav-group"><p>Introduction</p><ol><li><a href="/naming-things/chapters/1-purpose-of-this-book/"><span class="chapter-number">1</span><span>Purpose of this book</span></a></li><li><a href="/naming-things/chapters/2-why-is-naming-important/"><span class="chapter-number">2</span><span>Why is naming important?</span></a></li><li><a href="/naming-things/chapters/3-why-is-naming-hard/"><span class="chapter-number">3</span><span>Why is naming hard?</span></a></li><li><a href="/naming-things/chapters/4-scope-of-this-book/"><span class="chapter-number">4</span><span>Scope of this book</span></a></li></ol></div><div class="nav-group"><p>Principles</p><ol><li><a href="/naming-things/chapters/5-overview/"><span class="chapter-number">5</span><span>Overview</span></a></li><li><a href="/naming-things/chapters/6-understandability/"><span class="chapter-number">6</span><span>Understandability</span></a></li><li><a href="/naming-things/chapters/7-conciseness/"><span class="chapter-number">7</span><span>Conciseness</span></a></li><li><a href="/naming-things/chapters/8-consistency/"><span class="chapter-number">8</span><span>Consistency</span></a></li><li><a href="/naming-things/chapters/9-distinguishability/"><span class="chapter-number">9</span><span>Distinguishability</span></a></li></ol></div><div class="nav-group"><p>Application</p><ol><li><a href="/naming-things/chapters/10-overview/"><span class="chapter-number">10</span><span>Overview</span></a></li><li><a href="/naming-things/chapters/11-tradeoffs/"><span class="chapter-number">11</span><span>Tradeoffs</span></a></li><li><a href="/naming-things/chapters/12-identifier-types/"><span class="chapter-number">12</span><span>Identifier types</span></a></li><li><a href="/naming-things/chapters/13-style-guides/"><span class="chapter-number">13</span><span>Style guides</span></a></li><li><a href="/naming-things/chapters/14-controlled-vocabularies/"><span class="chapter-number">14</span><span>Controlled vocabularies</span></a></li><li><a href="/naming-things/chapters/15-renaming/"><span class="chapter-number">15</span><span>Renaming</span></a></li><li><a href="/naming-things/chapters/16-domain-specific-names/"><span class="chapter-number">16</span><span>Domain-specific names</span></a></li><li><a href="/naming-things/chapters/17-developing-naming-skills/" aria-current="page"><span class="chapter-number">17</span><span>Developing naming skills</span></a></li></ol></div><div class="nav-group"><p>Appendix</p><ol><li><a href="/naming-things/chapters/18-common-antonyms/"><span class="chapter-number">18</span><span>Common antonyms</span></a></li><li><a href="/naming-things/chapters/19-visually-similar-characters/"><span class="chapter-number">19</span><span>Visually similar characters</span></a></li><li><a href="/naming-things/chapters/20-rejected-principles/"><span class="chapter-number">20</span><span>Rejected principles</span></a></li></ol></div><div class="nav-extra"><a href="/naming-things/acknowledgements/">Acknowledgements</a><a href="/naming-things/references/">References</a><a href="/naming-things/roadmap/">Roadmap</a></div></div></nav></div></header>
-<div class="layout"><aside class="chapter-sidebar"><nav aria-label="Chapters"><a class="contents-link" href="/naming-things/">Contents</a><div class="nav-group"><p>Introduction</p><ol><li><a href="/naming-things/chapters/1-purpose-of-this-book/"><span class="chapter-number">1</span><span>Purpose of this book</span></a></li><li><a href="/naming-things/chapters/2-why-is-naming-important/"><span class="chapter-number">2</span><span>Why is naming important?</span></a></li><li><a href="/naming-things/chapters/3-why-is-naming-hard/"><span class="chapter-number">3</span><span>Why is naming hard?</span></a></li><li><a href="/naming-things/chapters/4-scope-of-this-book/"><span class="chapter-number">4</span><span>Scope of this book</span></a></li></ol></div><div class="nav-group"><p>Principles</p><ol><li><a href="/naming-things/chapters/5-overview/"><span class="chapter-number">5</span><span>Overview</span></a></li><li><a href="/naming-things/chapters/6-understandability/"><span class="chapter-number">6</span><span>Understandability</span></a></li><li><a href="/naming-things/chapters/7-conciseness/"><span class="chapter-number">7</span><span>Conciseness</span></a></li><li><a href="/naming-things/chapters/8-consistency/"><span class="chapter-number">8</span><span>Consistency</span></a></li><li><a href="/naming-things/chapters/9-distinguishability/"><span class="chapter-number">9</span><span>Distinguishability</span></a></li></ol></div><div class="nav-group"><p>Application</p><ol><li><a href="/naming-things/chapters/10-overview/"><span class="chapter-number">10</span><span>Overview</span></a></li><li><a href="/naming-things/chapters/11-tradeoffs/"><span class="chapter-number">11</span><span>Tradeoffs</span></a></li><li><a href="/naming-things/chapters/12-identifier-types/"><span class="chapter-number">12</span><span>Identifier types</span></a></li><li><a href="/naming-things/chapters/13-style-guides/"><span class="chapter-number">13</span><span>Style guides</span></a></li><li><a href="/naming-things/chapters/14-controlled-vocabularies/"><span class="chapter-number">14</span><span>Controlled vocabularies</span></a></li><li><a href="/naming-things/chapters/15-renaming/"><span class="chapter-number">15</span><span>Renaming</span></a></li><li><a href="/naming-things/chapters/16-domain-specific-names/"><span class="chapter-number">16</span><span>Domain-specific names</span></a></li><li><a href="/naming-things/chapters/17-developing-naming-skills/" aria-current="page"><span class="chapter-number">17</span><span>Developing naming skills</span></a></li></ol></div><div class="nav-group"><p>Appendix</p><ol><li><a href="/naming-things/chapters/18-common-antonyms/"><span class="chapter-number">18</span><span>Common antonyms</span></a></li><li><a href="/naming-things/chapters/19-visually-similar-characters/"><span class="chapter-number">19</span><span>Visually similar characters</span></a></li><li><a href="/naming-things/chapters/20-rejected-principles/"><span class="chapter-number">20</span><span>Rejected principles</span></a></li></ol></div><div class="nav-extra"><a href="/naming-things/acknowledgements/">Acknowledgements</a><a href="/naming-things/references/">References</a><a href="/naming-things/roadmap/">Roadmap</a></div></nav></aside><main id="main" tabindex="-1"><p class="eyebrow">Application / Chapter 17</p><h1>Developing naming skills</h1><article class="prose"><h2 id="section-17-1">17.1. Improving your naming skills</h2><p>The fact that you’re reading this book shows that you’re already ahead of the curve when it comes to thinking about naming, but our goal is to improve names by applying this information.</p><h3 id="section-17-1-1">17.1.1. Initial steps</h3><p>If you’re a software engineer, you can start applying these principles today. An easy place to start is to give more consideration to small-scoped, new names in the code you work on. This involves both choosing better names when you need to name a new concept, and also giving thoughtful, useful feedback about new names that others introduce when you review their code. A slightly higher- effort but potentially more impactful step is to rename existing names that have a small scope, especially if you’re already touching that code.</p><p>Start thinking more critically about existing names in the systems you work in to determine if any should be renamed, regardless of their scope. Discuss the existing names with your colleagues to see if those names are confusing or uninformative to others. This will also prompt your colleagues to start thinking more critically of those names, which helps to build early alignment on a rename.</p><p>If you want to be more ambitious, consider which names create the highest costs in your team, regardless of the rename cost. Try to plan the steps involved in replacing those. Is the benefit worth the cost? How would you communicate the benefits and costs to other team members?</p><h3 id="section-17-1-2">17.1.2. Ongoing learning</h3><p>Good naming requires domain knowledge and careful consideration about how to communicate concepts.</p><p>Learning your domain thoroughly can be a fast path to being informed about how to choose the best names within it. Find and read content that focuses on your domain to see what names typically map to each concept. This could include public knowledge bases (e.g., Wikipedia, forums), articles and blog posts by industry leaders in your domain, or any other relevant content. This helps you internalize your domain’s effective controlled vocabulary and more effectively detect incorrect names.</p><p>Discuss names more frequently with people in other functions. Ask them if specific names are confusing or inconsistent with how non-engineers refer to that concept or ask them what they think about your team’s names in general. Whenever it’s unclear what the proper domain- specific name for a new concept is, ask users, product managers, marketing, or customer success-focused colleagues for their perspective to gain a wider perspective on the domain’s terminology.</p><p>Pay attention to the vocabulary that both you and your colleagues use when discussing your domain in daily conversations. Are there terms that are part of the internal vernacular that are very obviously inaccurate or confusing?</p><p>Read and write more often. Well-written content, regardless of its format or domain, uses words that are precisely chosen. Reading it helps you observe how people who care a great deal about communication chose terms to communicate concepts. Writing forces you to select terms frequently. This practice fosters skills necessary for good naming.</p><h2 id="section-17-2">17.2. Improving your team’s naming skills</h2><p>Similar to other aspects of software engineering, naming is performed best when the team is aligned on the problem and actively collaborates on solving it. If you see a problem and are unsure if others see it, be proactive about raising it as a concern.</p><p>If anyone pushes back on the need for this discussion of names, ask them to think back to when they experience wasted effort or time due to poor naming. Be diligent but courteous about correcting anyone who uses the incorrect term for something. For example, if someone uses the term “Customer” when they should be using the term “User”, gently correct them. Otherwise, not only will that person continue to use the incorrect term, but everyone who heard them (including new team members) may use it as well.</p><p>When you join a new team, pay close attention to its names early on. If you are familiar with the domain, the names should be easy to understand. If you are unfamiliar with the domain, the names should teach you the appropriate terminology for the domain. In either case, the names should demonstrate the principles in this book. If that isn’t the case, ask how the names were chosen. As a new team member, you may not have enough context to propose renames, but you have fresh eyes and may be able to more easily see poor names and gently ask if renaming has been considered or make note of them for later.</p><p>Regardless of which team you join, most engineers that you work with likely enjoy Phil Karlton’s quote about naming being one of the two hard things in computer science. Good naming is hard, but it’s also important. By using the practical application of sound principles, we can make it easier to find and use good names on any team, and thus make software engineering more efficient and enjoyable for everyone.</p></article><nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/naming-things/chapters/16-domain-specific-names/"><span>Previous chapter</span>Domain-specific names</a><a href="/naming-things/chapters/18-common-antonyms/"><span>Next chapter</span>Common antonyms</a></nav><footer class="site-footer"><p>Tom Benner · Second edition, 2023</p><p>Copyright © 2023 Tom Benner. All rights reserved.</p></footer></main><aside class="page-toc" aria-label="On this page"><p>On this page</p><a class="depth-2" href="#section-17-1">17.1. Improving your naming skills</a><a class="depth-3" href="#section-17-1-1">17.1.1. Initial steps</a><a class="depth-3" href="#section-17-1-2">17.1.2. Ongoing learning</a><a class="depth-2" href="#section-17-2">17.2. Improving your team’s naming skills</a></aside></div></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Developing naming skills — Naming Things</title>
+    <meta
+      name="description"
+      content="Read Developing naming skills in Naming Things: The Hardest Problem in Software Engineering, second edition, by Tom Benner."
+    />
+    <link
+      rel="canonical"
+      href="https://pythonidaer.github.io/naming-things/chapters/17-developing-naming-skills/"
+    />
+    <meta
+      property="og:title"
+      content="Developing naming skills — Naming Things"
+    />
+    <meta
+      property="og:description"
+      content="Read Developing naming skills in Naming Things: The Hardest Problem in Software Engineering, second edition, by Tom Benner."
+    />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:url"
+      content="https://pythonidaer.github.io/naming-things/chapters/17-developing-naming-skills/"
+    />
+    <meta
+      property="og:image"
+      content="https://pythonidaer.github.io/naming-things/share.png"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Naming Things. The Hardest Problem in Software Engineering. Tom Benner."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Developing naming skills — Naming Things"
+    />
+    <meta
+      name="twitter:description"
+      content="Read Developing naming skills in Naming Things: The Hardest Problem in Software Engineering, second edition, by Tom Benner."
+    />
+    <meta
+      name="twitter:image"
+      content="https://pythonidaer.github.io/naming-things/share.png"
+    />
+    <meta name="twitter:image:alt" content="Naming Things by Tom Benner" />
+    <link rel="icon" href="/naming-things/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/naming-things/reset.css" />
+    <link rel="stylesheet" href="/naming-things/styles.css" />
+    <link rel="stylesheet" href="/naming-things/navigation.css" />
+    <script defer src="/naming-things/navigation.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="wordmark" href="/naming-things/">Naming Things</a>
+        <button
+          id="nav-toggle"
+          class="nav-toggle"
+          type="button"
+          aria-label="Open navigation"
+          aria-expanded="false"
+          aria-controls="site-navigation"
+        >
+          <span aria-hidden="true"></span><span aria-hidden="true"></span
+          ><span aria-hidden="true"></span>
+        </button>
+        <nav
+          id="site-navigation"
+          class="nav-links"
+          aria-label="Main navigation"
+        >
+          <div class="desktop-links">
+            <a href="/naming-things/">Contents</a
+            ><a href="/naming-things/roadmap/">Roadmap</a>
+          </div>
+          <div class="compact-links">
+            <a class="contents-link" href="/naming-things/">Contents</a>
+            <div class="nav-group">
+              <p>Introduction</p>
+              <ol>
+                <li>
+                  <a href="/naming-things/chapters/1-purpose-of-this-book/"
+                    ><span class="chapter-number">1</span
+                    ><span>Purpose of this book</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/2-why-is-naming-important/"
+                    ><span class="chapter-number">2</span
+                    ><span>Why is naming important?</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/3-why-is-naming-hard/"
+                    ><span class="chapter-number">3</span
+                    ><span>Why is naming hard?</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/4-scope-of-this-book/"
+                    ><span class="chapter-number">4</span
+                    ><span>Scope of this book</span></a
+                  >
+                </li>
+              </ol>
+            </div>
+            <div class="nav-group">
+              <p>Principles</p>
+              <ol>
+                <li>
+                  <a href="/naming-things/chapters/5-overview/"
+                    ><span class="chapter-number">5</span
+                    ><span>Overview</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/6-understandability/"
+                    ><span class="chapter-number">6</span
+                    ><span>Understandability</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/7-conciseness/"
+                    ><span class="chapter-number">7</span
+                    ><span>Conciseness</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/8-consistency/"
+                    ><span class="chapter-number">8</span
+                    ><span>Consistency</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/9-distinguishability/"
+                    ><span class="chapter-number">9</span
+                    ><span>Distinguishability</span></a
+                  >
+                </li>
+              </ol>
+            </div>
+            <div class="nav-group">
+              <p>Application</p>
+              <ol>
+                <li>
+                  <a href="/naming-things/chapters/10-overview/"
+                    ><span class="chapter-number">10</span
+                    ><span>Overview</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/11-tradeoffs/"
+                    ><span class="chapter-number">11</span
+                    ><span>Tradeoffs</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/12-identifier-types/"
+                    ><span class="chapter-number">12</span
+                    ><span>Identifier types</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/13-style-guides/"
+                    ><span class="chapter-number">13</span
+                    ><span>Style guides</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/14-controlled-vocabularies/"
+                    ><span class="chapter-number">14</span
+                    ><span>Controlled vocabularies</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/15-renaming/"
+                    ><span class="chapter-number">15</span
+                    ><span>Renaming</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/16-domain-specific-names/"
+                    ><span class="chapter-number">16</span
+                    ><span>Domain-specific names</span></a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/naming-things/chapters/17-developing-naming-skills/"
+                    aria-current="page"
+                    ><span class="chapter-number">17</span
+                    ><span>Developing naming skills</span></a
+                  >
+                </li>
+              </ol>
+            </div>
+            <div class="nav-group">
+              <p>Appendix</p>
+              <ol>
+                <li>
+                  <a href="/naming-things/chapters/18-common-antonyms/"
+                    ><span class="chapter-number">18</span
+                    ><span>Common antonyms</span></a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/naming-things/chapters/19-visually-similar-characters/"
+                    ><span class="chapter-number">19</span
+                    ><span>Visually similar characters</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/naming-things/chapters/20-rejected-principles/"
+                    ><span class="chapter-number">20</span
+                    ><span>Rejected principles</span></a
+                  >
+                </li>
+              </ol>
+            </div>
+            <div class="nav-extra">
+              <a href="/naming-things/acknowledgements/">Acknowledgements</a
+              ><a href="/naming-things/references/">References</a
+              ><a href="/naming-things/roadmap/">Roadmap</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <div class="layout">
+      <aside class="chapter-sidebar">
+        <nav aria-label="Chapters">
+          <a class="contents-link" href="/naming-things/">Contents</a>
+          <div class="nav-group">
+            <p>Introduction</p>
+            <ol>
+              <li>
+                <a href="/naming-things/chapters/1-purpose-of-this-book/"
+                  ><span class="chapter-number">1</span
+                  ><span>Purpose of this book</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/2-why-is-naming-important/"
+                  ><span class="chapter-number">2</span
+                  ><span>Why is naming important?</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/3-why-is-naming-hard/"
+                  ><span class="chapter-number">3</span
+                  ><span>Why is naming hard?</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/4-scope-of-this-book/"
+                  ><span class="chapter-number">4</span
+                  ><span>Scope of this book</span></a
+                >
+              </li>
+            </ol>
+          </div>
+          <div class="nav-group">
+            <p>Principles</p>
+            <ol>
+              <li>
+                <a href="/naming-things/chapters/5-overview/"
+                  ><span class="chapter-number">5</span><span>Overview</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/6-understandability/"
+                  ><span class="chapter-number">6</span
+                  ><span>Understandability</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/7-conciseness/"
+                  ><span class="chapter-number">7</span
+                  ><span>Conciseness</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/8-consistency/"
+                  ><span class="chapter-number">8</span
+                  ><span>Consistency</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/9-distinguishability/"
+                  ><span class="chapter-number">9</span
+                  ><span>Distinguishability</span></a
+                >
+              </li>
+            </ol>
+          </div>
+          <div class="nav-group">
+            <p>Application</p>
+            <ol>
+              <li>
+                <a href="/naming-things/chapters/10-overview/"
+                  ><span class="chapter-number">10</span
+                  ><span>Overview</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/11-tradeoffs/"
+                  ><span class="chapter-number">11</span
+                  ><span>Tradeoffs</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/12-identifier-types/"
+                  ><span class="chapter-number">12</span
+                  ><span>Identifier types</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/13-style-guides/"
+                  ><span class="chapter-number">13</span
+                  ><span>Style guides</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/14-controlled-vocabularies/"
+                  ><span class="chapter-number">14</span
+                  ><span>Controlled vocabularies</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/15-renaming/"
+                  ><span class="chapter-number">15</span
+                  ><span>Renaming</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/16-domain-specific-names/"
+                  ><span class="chapter-number">16</span
+                  ><span>Domain-specific names</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="/naming-things/chapters/17-developing-naming-skills/"
+                  aria-current="page"
+                  ><span class="chapter-number">17</span
+                  ><span>Developing naming skills</span></a
+                >
+              </li>
+            </ol>
+          </div>
+          <div class="nav-group">
+            <p>Appendix</p>
+            <ol>
+              <li>
+                <a href="/naming-things/chapters/18-common-antonyms/"
+                  ><span class="chapter-number">18</span
+                  ><span>Common antonyms</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="/naming-things/chapters/19-visually-similar-characters/"
+                  ><span class="chapter-number">19</span
+                  ><span>Visually similar characters</span></a
+                >
+              </li>
+              <li>
+                <a href="/naming-things/chapters/20-rejected-principles/"
+                  ><span class="chapter-number">20</span
+                  ><span>Rejected principles</span></a
+                >
+              </li>
+            </ol>
+          </div>
+          <div class="nav-extra">
+            <a href="/naming-things/acknowledgements/">Acknowledgements</a
+            ><a href="/naming-things/references/">References</a
+            ><a href="/naming-things/roadmap/">Roadmap</a>
+          </div>
+        </nav>
+      </aside>
+      <main id="main" tabindex="-1">
+        <p class="eyebrow">Application / Chapter 17</p>
+        <h1>Developing naming skills</h1>
+        <article class="prose">
+          <h2 id="section-17-1">17.1. Improving your naming skills</h2>
+          <p>
+            The fact that you’re reading this book shows that you’re already
+            ahead of the curve when it comes to thinking about naming, but our
+            goal is to improve names by applying this information.
+          </p>
+          <h3 id="section-17-1-1">17.1.1. Initial steps</h3>
+          <p>
+            If you’re a software engineer, you can start applying these
+            principles today. An easy place to start is to give more
+            consideration to small-scoped, new names in the code you work on.
+            This involves both choosing better names when you need to name a new
+            concept, and also giving thoughtful, useful feedback about new names
+            that others introduce when you review their code. A slightly higher-
+            effort but potentially more impactful step is to rename existing
+            names that have a small scope, especially if you’re already touching
+            that code.
+          </p>
+          <p>
+            Start thinking more critically about existing names in the systems
+            you work in to determine if any should be renamed, regardless of
+            their scope. Discuss the existing names with your colleagues to see
+            if those names are confusing or uninformative to others. This will
+            also prompt your colleagues to start thinking more critically of
+            those names, which helps to build early alignment on a rename.
+          </p>
+          <p>
+            If you want to be more ambitious, consider which names create the
+            highest costs in your team, regardless of the rename cost. Try to
+            plan the steps involved in replacing those. Is the benefit worth the
+            cost? How would you communicate the benefits and costs to other team
+            members?
+          </p>
+          <h3 id="section-17-1-2">17.1.2. Ongoing learning</h3>
+          <p>
+            Good naming requires domain knowledge and careful consideration
+            about how to communicate concepts.
+          </p>
+          <p>
+            Learning your domain thoroughly can be a fast path to being informed
+            about how to choose the best names within it. Find and read content
+            that focuses on your domain to see what names typically map to each
+            concept. This could include public knowledge bases (e.g., Wikipedia,
+            forums), articles and blog posts by industry leaders in your domain,
+            or any other relevant content. This helps you internalize your
+            domain’s effective controlled vocabulary and more effectively detect
+            incorrect names.
+          </p>
+          <p>
+            Discuss names more frequently with people in other functions. Ask
+            them if specific names are confusing or inconsistent with how
+            non-engineers refer to that concept or ask them what they think
+            about your team’s names in general. Whenever it’s unclear what the
+            proper domain- specific name for a new concept is, ask users,
+            product managers, marketing, or customer success-focused colleagues
+            for their perspective to gain a wider perspective on the domain’s
+            terminology.
+          </p>
+          <p>
+            Pay attention to the vocabulary that both you and your colleagues
+            use when discussing your domain in daily conversations. Are there
+            terms that are part of the internal vernacular that are very
+            obviously inaccurate or confusing?
+          </p>
+          <p>
+            Read and write more often. Well-written content, regardless of its
+            format or domain, uses words that are precisely chosen. Reading it
+            helps you observe how people who care a great deal about
+            communication chose terms to communicate concepts. Writing forces
+            you to select terms frequently. This practice fosters skills
+            necessary for good naming.
+          </p>
+          <h2 id="section-17-2">17.2. Improving your team’s naming skills</h2>
+          <p>
+            Similar to other aspects of software engineering, naming is
+            performed best when the team is aligned on the problem and actively
+            collaborates on solving it. If you see a problem and are unsure if
+            others see it, be proactive about raising it as a concern.
+          </p>
+          <p>
+            If anyone pushes back on the need for this discussion of names, ask
+            them to think back to when they experience wasted effort or time due
+            to poor naming. Be diligent but courteous about correcting anyone
+            who uses the incorrect term for something. For example, if someone
+            uses the term “Customer” when they should be using the term “User”,
+            gently correct them. Otherwise, not only will that person continue
+            to use the incorrect term, but everyone who heard them (including
+            new team members) may use it as well.
+          </p>
+          <p>
+            When you join a new team, pay close attention to its names early on.
+            If you are familiar with the domain, the names should be easy to
+            understand. If you are unfamiliar with the domain, the names should
+            teach you the appropriate terminology for the domain. In either
+            case, the names should demonstrate the principles in this book. If
+            that isn’t the case, ask how the names were chosen. As a new team
+            member, you may not have enough context to propose renames, but you
+            have fresh eyes and may be able to more easily see poor names and
+            gently ask if renaming has been considered or make note of them for
+            later.
+          </p>
+          <p>
+            Regardless of which team you join, most engineers that you work with
+            likely enjoy Phil Karlton’s quote about naming being one of the two
+            hard things in computer science. Good naming is hard, but it’s also
+            important. By using the practical application of sound principles,
+            we can make it easier to find and use good names on any team, and
+            thus make software engineering more efficient and enjoyable for
+            everyone.
+          </p>
+        </article>
+        <nav class="chapter-pagination" aria-label="Chapter navigation">
+          <a href="/naming-things/chapters/16-domain-specific-names/"
+            ><span>Previous chapter</span>Domain-specific names</a
+          ><a href="/naming-things/chapters/18-common-antonyms/"
+            ><span>Next chapter</span>Common antonyms</a
+          >
+        </nav>
+        <footer class="site-footer">
+          <p>Tom Benner · Second edition, 2023</p>
+          <p>Copyright © 2023 Tom Benner. All rights reserved.</p>
+        </footer>
+      </main>
+      <aside class="page-toc" aria-label="On this page">
+        <p>On this page</p>
+        <a class="depth-2" href="#section-17-1"
+          >17.1. Improving your naming skills</a
+        ><a class="depth-3" href="#section-17-1-1">17.1.1. Initial steps</a
+        ><a class="depth-3" href="#section-17-1-2">17.1.2. Ongoing learning</a
+        ><a class="depth-2" href="#section-17-2"
+          >17.2. Improving your team’s naming skills</a
+        >
+      </aside>
+    </div>
+  </body>
+</html>
